@@ -16,5 +16,5 @@ do
        arara thesis.tex
        LTIME=$ATIME
    fi
-   sleep 25
+   sleep 2
 done
