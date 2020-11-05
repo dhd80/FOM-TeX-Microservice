@@ -21,12 +21,14 @@ installiere [Docker for Mac](https://docs.docker.com/docker-for-mac/install) Das
 2. gehe in den Ordner dieses Repository
 
 3. baue den Docker mit folgendem Befehl:
+
 ``
 docker Bild --pull --rm -f "Dockerfile" -t \
 	fomtextemplate:latest "."
 ``
 
 4. starte den Docker mit folgendem Befehl:
+
 ``
 docker run -d \
     --name fomtextemplate \
