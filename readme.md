@@ -33,7 +33,7 @@ installiere [Docker for Mac](https://docs.docker.com/docker-for-mac/install) Das
 Je nachdem welche Shell du nutzt, musst du ``{$PWD}`` in ``${PWD}`` ändern. Es wird eine _thesis.pdf_ neben der _thesis.tex_ erzeugt.
 
 ### Ohne Docker
-du kannst das Template kompilieren wenn du in deinem Terminal folgenden Befehl nutzt: ``arara thesis.tex`` Es wird eine thesis.pdf neben der _thesis.tex_ erzeugt.
+du kannst das Template kompilieren wenn du in deinem Terminal folgenden Befehl nutzt: ``arara thesis.tex`` Es wird eine _thesis.pdf_ neben der _thesis.tex_ erzeugt.
 
 ## Mein Workflow (Empfehlungen)
 ### Software
@@ -56,7 +56,7 @@ _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was
 macOS.
 
 ## To do
-Umstellen auf Alpine, CI, watch entire deine_inhalten, neuen Leitfaden nutzen, andere OS testen, Docker-Compose?
+Umstellen auf Alpine, CI, watch entire deine_inhalte, neuen Leitfaden nutzen, andere OS testen, Docker-Compose?
 
 ## Disclaimer
 Solltest du dieses Template nutzen wollen, plane genug Zeit ein und teste es vorher aus. Bespreche mit deinem Betreuer das Format, da mehrere Zitierstil im Umlauf sind und manche Betreuer speziellere Vorgaben machen. Gerne Antworte ich auf Anfragen, hier in GitHub. Ich kann jedoch keine Aussage über die Reaktionszeit treffen. Dies ist ein privates Projekt und die Nutzung auf eigene Gefahr. Diese Vorlage hat weder einen Anspruch auf Richtigkeit, noch auf Vollständigkeit. Verbesserungen sind jederzeit willkommen.
