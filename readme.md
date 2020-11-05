@@ -16,21 +16,19 @@ installiere [Docker for Mac](https://docs.docker.com/docker-for-mac/install) Das
 
 ## Verwendung
 ### Docker
-1. klone dieses Repository mit ``git clone https://github.com/dhd80/DockerizedFOMLaTeXTemplate.git``
+1. klone dieses Repository mit
+
+``git clone https://github.com/dhd80/DockerizedFOMLaTeXTemplate.git``
 
 2. gehe in den Ordner dieses Repository
 
 3. baue den Docker mit folgendem Befehl:
 
-``
-docker Bild --pull --rm -f "Dockerfile" -t fomtextemplate:latest "."
-``
+``docker Bild --pull --rm -f "Dockerfile" -t fomtextemplate:latest "."``
 
 4. starte den Docker mit folgendem Befehl:
 
-``
-docker run -d --name fomtextemplate -v {$PWD}:/usr/fomtextemplate:rw fomtextemplate:latest
-``
+``docker run -d --name fomtextemplate -v {$PWD}:/usr/fomtextemplate:rw fomtextemplate:latest``
 
 Je nachdem welche Shell du nutzt, musst du ``{$PWD}`` in ``${PWD}`` ändern. Es wird eine _thesis.pdf_ neben der _thesis.tex_ erzeugt.
 
