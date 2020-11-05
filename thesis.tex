@@ -1,0 +1,283 @@
+% !TEX TS-program = arara
+% arara: clean: {files: [thesis.pdfsync, thesis.bbl, thesis.aux, thesis.toc, thesis.pdf]}
+% arara: xelatex
+% arara: nomencl
+% arara: biber
+% arara: biber
+% arara: xelatex
+% arara: xelatex
+% arara: clean: {files: [thesis.pdfsync, thesis.out, thesis.toc, thesis.lot, thesis.lof, thesis.bbl, thesis.nls, thesis.nlo, thesis.aux, thesis.idx, thesis.ilg, thesis.ind, thesis.bbl, thesis.bcf, thesis.ist, thesis.blg, thesis.run.xml, thesis.fdb_latexmk, thesis.fls]}
+%
+%
+%
+\documentclass[german,12pt,oneside,titlepage,listof=totoc,bibliography=totoc]{scrartcl}
+\usepackage[a4paper, left=4cm, right=2cm, top=4cm, bottom=2cm]{geometry}
+%====================================
+% Layout Pakete
+%====================================
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{setspace}
+%====================================
+% Sprachsupport Pakete
+%====================================
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new]{german}
+\usepackage[german=quotes,autostyle]{csquotes}
+%====================================
+% Divers
+%====================================
+\usepackage{longtable}
+\usepackage{pdfpages}
+\usepackage{appendix}
+\usepackage{blindtext}
+%====================================
+% Systemschriftarten Pakete
+%====================================
+% eine Times new Roman Version
+%====================================
+\usepackage{fontspec}                   % muss vor den Schriften ausgeführt werden
+\setmainfont{Times New Roman}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+\addtokomafont{sectionentry}{\mdseries} % keine Fettschriften im Inhaltsverzeichnis
+\setkomafont{sectioning}{\bfseries}     % Überschriften mit Serifenschrift
+\usepackage{ragged2e}
+%====================================
+% Unter- und Überschriften Pakete
+%====================================
+\usepackage{caption}[2008/08/24]
+\captionsetup[figure]{%
+	labelfont={bf,rm},
+	textfont={bf,rm},
+	justification=raggedright,
+	singlelinecheck=off
+}
+\captionsetup[table]{%
+	labelfont={bf,rm},
+	textfont={bf,rm},
+	justification=raggedright,
+	singlelinecheck=off
+}
+\newcommand{\capquelle}[1]{%
+	\par\parbox{\captionwidth}{\raggedright\bigskip Quelle: #1}%
+}
+\usepackage{hvfloat}
+%====================================
+% Literaturverzeichnis Art
+%====================================
+%%%% Neuer Leitfaden (2018)
+\usepackage[
+	backend=biber,
+	style=ext-authoryear,
+	maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
+	maxbibnames=999,
+	mergedate=false,
+	date=iso,
+	seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
+	urldate=iso,
+	innamebeforetitle,
+	dashed=false,
+	autocite=footnote,
+	doi=false,
+	useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
+	mincrossrefs=1
+]{biblatex}%iso dateformat für YYYY-MM-DD
+\input{app/skripte/modsBiblatex2018}
+%====================================
+% Fußnoten Pakete
+%====================================
+\usepackage{footnote}
+\usepackage[hang,multiple,bottom,stable]{footmisc} % Mehrere Fußnoten nacheinander mit Komma separiert
+\setlength{\footnotesep}{2pt} % Legt den Abstand zwischen zwei Fußnotentexten am unteren Seitenrand fest
+\setlength{\footheight}{22cm} % Legt die Höhe des Leerraumes fest am unteren Seitenrand für eine Fußzeile reserviert wird
+\setlength{\footnotemargin}{.8em} % Abstand Text Fußnotennummer
+\interfootnotelinepenalty=9999 % kein Zeilenumbruch der Fußnote !!!!
+
+%====================================
+% Aufzählungen Pakete
+%====================================
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\bullet$}
+\renewcommand{\labelitemiii}{$\bullet$}
+\renewcommand{\labelitemiv}{$\bullet$}
+%====================================
+% Tabellen Pakete
+%====================================
+%\usepackage[table]{xcolor}
+\usepackage{nicefrac} % Brüche
+\usepackage{multirow}
+\usepackage{rotating} % vertikal schreiben
+\usepackage{colortbl}
+\usepackage{mdwlist}
+%\captionsetup[table]{position=above}
+%====================================
+% Pakete zur Hyperkinks
+%====================================
+\usepackage[colorlinks=false]{hyperref}
+\urlstyle{rm}
+%====================================
+% Pakete zur Demonstration
+%====================================
+\usepackage{blindtext}
+%====================================
+% Mathe Formeln etc.
+%====================================
+\usepackage{newtxmath}
+%====================================
+% Farben
+%====================================
+\definecolor{dunkelgrau}{rgb}{0.8,0.8,0.8}
+\definecolor{hellgrau}{rgb}{0.0,0.7,0.99}
+\definecolor{mauve}{rgb}{0.58,0,0.82}       % Colors for listings
+\definecolor{dkgreen}{rgb}{0,0.6,0}         % Colors for listings
+%====================================
+% sauber formatierter Quelltext
+%====================================
+\usepackage{listings}
+\lstset{
+	basicstyle=\small\ttfamily,             % font style
+	numberstyle=\small,
+	numbers=left,
+	numbersep=8pt,                          % distance number text
+	stepnumber=1,
+	breaklines=true,
+	showstringspaces=false,
+	frame=l,
+	framexleftmargin=1pt,
+	framexrightmargin=5pt,
+	keywordstyle=\color{blue},              % keyword style
+	commentstyle=\color{dkgreen},           % comment style
+	stringstyle=\color{mauve}               % string literal style
+} % use \lstset{language=Java}
+%====================================
+% Zeilenabstand 1,5-zeilig
+%====================================
+\linespread{1.5}
+%====================================
+% Absatzeinzug und -abstand
+% Absätze durch eine neue Zeile
+%====================================
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0.3em plus 0.5em minus 0.6em}
+%====================================
+% Skriptdateien Einbinden
+%====================================
+\addbibresource{deine_inhalte/citations.bib} 
+\addbibresource{deine_inhalte/citations_manual.bib} 
+%====================================
+\graphicspath{{deine_inhalte/Abbildungen/}{deine_inhalte/Titelseite/}{deine_inhalte/Kapitelanhang/}}
+\input{app/skripte/weitereEbene}
+%====================================
+% Abkürzungsverzeichnis
+%====================================
+\usepackage[intoc]{nomencl}
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\setlength{\nomlabelwidth}{.50\textwidth}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+%========================================================================
+% Metainformationen
+% Hier gibts du deine Daten ein!!!
+%========================================================================
+\input{deine_inhalte/Metainformationen}
+%====================================
+% Kopfzeile / Header definieren
+% Fußzeile / Footer definieren
+% Seitenzahlen definieren
+%====================================
+\fancypagestyle{plain}%
+	\fancyhf{} %clear header and footer fields %redefine plain style
+	\fancyhead[C]{\thepage}
+	\fancyfoot{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt} 
+\pagestyle{fancy} %define site style
+	\fancyhf{} 
+	\fancyhead[C]{\thepage}
+	\fancyfoot{}
+	%\chead{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+
+%====================================
+% Ab hier startet dein Dokument!!!
+%====================================
+\begin{document}
+	\renewcommand{\figurename}{Abbildung} 			% Bildunterschrift
+	\pagenumbering{Roman}							% Seitennumerierung auf römisch umstellen
+\renewcommand{\refname}{Literaturverzeichnis}		% "Literaturverzeichnis" benennen
+\newcolumntype{C}{>{\arraybackslash}X}				% Neuer Tabellen-Spalten-Typ: Zentriert und umbrechbar
+%========================================================================
+% Titlelseite Stand: Dezember 2016
+%========================================================================
+ \input{deine_inhalte/Titelseite/Titelseite}
+ \newpage
+%====================================
+% Definition des Dokuments
+% (nach Titelseite)
+%====================================
+\restoregeometry %Wiederherstellen der Einstellungen der Geometrie aus der Präambel
+%========================================================================
+% Dokumentseiten ab hier bindest du die folgenden Seiten ein!!!
+% Kommentier sie mit - % - um die Seiten auszuschliessen
+%========================================================================
+% Sperrvermerk Seite
+%====================================
+% \input{deine_inhalte/Kapitelanhang/Sperrvermerk}
+%====================================
+% Inhaltsverzeichnis
+%====================================
+\setcounter{page}{2} %Zähler manuell hochsetzen
+\tableofcontents
+\newpage
+%====================================
+% Abkürzungsverzeichnis
+%====================================
+\printnomenclature
+\newpage
+%====================================
+% Abbildungsverzeichnis
+%====================================
+%\listoffigures
+%\newpage
+%====================================
+% Tabellenverzeichnis
+%====================================
+%\listoftables
+%\newpage
+%====================================
+% Seitennummerierung auf arabisch und
+% ab 1 beginnend umstellen
+%====================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%====================================
+% Deine Kapitel einbinden!!!
+% Deine Inhalte einbinden!!!
+%====================================
+
+	\input{deine_inhalte/Kapitel}
+
+
+%====================================
+% Literaturverzeichnis
+%====================================
+\newpage
+\printbibliography[nottype=online,heading=bibintoc,title={Literaturverzeichnis}]
+\printbibliography[type=online,title={Internetquellen}]
+%====================================
+% Deine Kapitel einbinden!!!
+% Deine Inhalte einbinden!!!
+%====================================
+\newpage
+	\input{deine_inhalte/Kapitelanhang/Erklaerung}
+
+
+%====================================
+
+\end{document}
