@@ -43,7 +43,7 @@ du kannst das Template kompilieren wenn du in deinem Terminal folgenden Befehl n
 [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
 
 ### Bibliographie
-unter [zbib.org](https://zbib.org)kannst du die ISBNs deiner Bücher eingeben und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
+unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
 
 #### Flüchtige Quellen
 du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe https://www.linuxjournal.com/content/downloading-entire-web-site-wget
