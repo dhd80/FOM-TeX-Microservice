@@ -8,7 +8,7 @@ Dieses Tex Template ist eine sehr stark angepasst Version von Andy Grunwald's wu
 **Automatisch** da während des schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden.
 
 ## How it works
-Dieses dockerized LaTeX Template soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Danach wartet das Skript 2 Sekunden. Ein Kompilierungslauf dauert 15-23 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
+Dieses dockerized LaTeX Template soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Danach wartet das Skript 2 Sekunden. Ein Kompilierungslauf dauert 14-23 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
 
 ## Leitfaden
 Gestaltungsleitfaden 2018
