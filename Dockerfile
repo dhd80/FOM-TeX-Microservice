@@ -9,7 +9,7 @@ RUN useradd -m -p '' bowler \
     && mkdir -p /usr/fomtextemplate/ \
     && microdnf -y update \
     && microdnf -y install \
-        vim-X11 \
+        vim-minimal \
         inotify-tools \
         java-11-openjdk.x86_64 \
             biber \

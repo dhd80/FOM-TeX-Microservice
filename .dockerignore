@@ -21,7 +21,8 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
-readme.md
 *.log
+.vscode
 .github
 .DS_Store
+readme.md
