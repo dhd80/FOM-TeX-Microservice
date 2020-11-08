@@ -40,7 +40,7 @@ benutze einfach ~
   
     ``docker-compose up --build --remove-orphans``
 
-![Terminal](app/.github/terminal.png)
+![Terminal](.github/terminal.png)
 
 #### Via Dockerfile
 1. baue den Docker mit folgendem Befehl:
