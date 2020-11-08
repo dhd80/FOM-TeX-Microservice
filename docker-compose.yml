@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  fomtex:
+    container_name: fomtextemplate
+    image: fomtextemplate
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/fomtextemplate:rw
