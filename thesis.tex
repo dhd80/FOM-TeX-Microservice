@@ -1,12 +1,12 @@
 % !TEX TS-program = arara
-% arara: clean: {files: [thesis.pdfsync, thesis.bbl, thesis.aux, thesis.toc, thesis.pdf]}
+% arara: clean: {files: [thesis.bbl, thesis.aux, thesis.toc]}
 % arara: xelatex
 % arara: nomencl
 % arara: biber
 % arara: biber
 % arara: xelatex
 % arara: xelatex
-% arara: clean: {files: [thesis.pdfsync, thesis.out, thesis.toc, thesis.lot, thesis.lof, thesis.bbl, thesis.nls, thesis.nlo, thesis.aux, thesis.idx, thesis.ilg, thesis.ind, thesis.bbl, thesis.bcf, thesis.ist, thesis.blg, thesis.run.xml, thesis.fdb_latexmk, thesis.fls]}
+% arara: clean: {files: [thesis.out, thesis.toc, thesis.lot, thesis.lof, thesis.bbl, thesis.nls, thesis.nlo, thesis.aux, thesis.idx, thesis.ilg, thesis.ind, thesis.bbl, thesis.bcf, thesis.ist, thesis.blg, thesis.run.xml, thesis.fdb_latexmk, thesis.fls]}
 %
 %
 %
@@ -33,6 +33,7 @@
 \usepackage{longtable}
 \usepackage{pdfpages}
 \usepackage{appendix}
+\usepackage{pdfsync}
 \usepackage{blindtext}
 %====================================
 % Systemschriftarten Pakete
@@ -121,10 +122,6 @@
 %\usepackage[draft=true]{hyperref}
 \usepackage[hidelinks]{hyperref}
 \urlstyle{rm}
-%====================================
-% Pakete zur Demonstration
-%====================================
-\usepackage{blindtext}
 %====================================
 % Mathe Formeln etc.
 %====================================

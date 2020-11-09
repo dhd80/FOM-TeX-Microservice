@@ -31,7 +31,7 @@ benutze einfach ~
     
     docker-compose up
 
-~ fertig! 🤓 Oder starte wahlweise mit oder oder ohne Terminal (inkl. min. Fehlerhandling)
+~ fertig! 🤓 Oder starte wahlweise mit oder ohne Terminal (inkl. min. Fehlerhandling)
 - Ohne, also im Hintergrund:
     
     ``docker-compose up --detach --build --remove-orphans``
@@ -77,7 +77,7 @@ _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was
 macOS.
 
 ## To do
-CI, watch entire deine_inhalte, neuen Leitfaden nutzen, andere OS testen, cleanup TeX, cleanup cites, fancy* Pakete loswerden, Links mit Zeilenumbruch ohne Funktion.
+CI, watch entire deine_inhalte, neuen Leitfaden nutzen, andere OS testen, cleanup TeX, cleanup cites, fancy* Pakete loswerden, prüfen ob diverse Pakete nicht mehr benötigt werden.
 
 ## Disclaimer
 Solltest du dieses Template nutzen wollen, plane genug Zeit ein und teste es vorher aus. Bespreche mit deinem Betreuer das Format, da mehrere Zitierstile im Umlauf sind und manche Betreuer speziellere Vorgaben machen. Gerne Antworte ich auf Anfragen, hier in GitHub. Ich kann jedoch keine Aussage über die Reaktionszeit treffen. Dies ist ein privates Projekt und die Nutzung auf eigene Gefahr. Diese Vorlage hat weder einen Anspruch auf Richtigkeit, noch auf Vollständigkeit. Verbesserungen sind jederzeit willkommen.
