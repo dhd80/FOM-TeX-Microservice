@@ -1,14 +1,14 @@
-# FOM Tex Template
+# FOM Tex Template Microservice
 
 Eine LaTeX-Vorlage für den persönlichen Gebrauch für Scientific Essays, Haus-, Seminar-, Bachelor- und Master-Arbeiten an der FOM Hochschule für Oekonomie & Management.
 
 Dieses Tex Template ist eine sehr stark angepasst Version von Andy Grunwald's wunderbarem [FOM-LaTeX-Template](https://github.com/andygrunwald/FOM-LaTeX-Template). Anpassungen basieren auf den Rückmeldungen der Dozenten.
 
 ## Features
-**Automatisch** da während des schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden (~1.2GB).
+Template mit **Microservice** Charakter. **Automatisch** da während des schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden (~1.2GB).
 
 ## How it works
-Dieses dockerized LaTeX Template soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Danach wartet das Skript 2 Sekunden. Ein Kompilierungslauf dauert ~15 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
+Dieser dockerized LaTeX Template Microservice soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Danach wartet das Skript 2 Sekunden. Ein Kompilierungslauf dauert ~15 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
 
 ## Leitfaden
 Gestaltungsleitfaden 2018
