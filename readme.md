@@ -1,8 +1,8 @@
-# FOM Tex Template Microservice
+# FOM TeX Template Microservice
 
 Eine LaTeX-Vorlage für den persönlichen Gebrauch für Scientific Essays, Haus-, Seminar-, Bachelor- und Master-Arbeiten an der FOM Hochschule für Oekonomie & Management.
 
-Dieses Tex Template ist eine sehr stark angepasst Version von Andy Grunwald's wunderbarem [FOM-LaTeX-Template](https://github.com/andygrunwald/FOM-LaTeX-Template). Anpassungen basieren auf den Rückmeldungen der Dozenten.
+Dieses TeX Template ist eine sehr stark angepasst Version von Andy Grunwald's wunderbarem [FOM-LaTeX-Template](https://github.com/andygrunwald/FOM-LaTeX-Template). Anpassungen basieren auf den Rückmeldungen der Dozenten.
 
 ## Features
 Template mit **Microservice** Charakter. **Automatisch** da während des schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden (~1.2GB).
@@ -20,7 +20,7 @@ installiere [Docker for Mac](https://docs.docker.com/docker-for-mac/install) Das
 ### Vorbereitung
 1. klone dieses Repository in deinem Terminal, mit dem Befehl
 
-    ``git clone https://github.com/dhd80/DockerizedFOMLaTeXTemplate.git``
+    ``git clone https://github.com/dhd80/FOM-TeX-Microservice.git``
 
 2. gehe in den Ordner dieses Repository mit 
     ``cd DockerizedFOMLaTeXTemplate``
