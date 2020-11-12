@@ -71,7 +71,7 @@ unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben u
 du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe https://www.linuxjournal.com/content/downloading-entire-web-site-wget
 
 #### Wörter zählen
-bei jedem Lauf wird die Datei _word_count.log_ erstellt, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
+bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
 
 ## Fehlerhandling
 _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv thesis.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
