@@ -47,6 +47,7 @@ RUN useradd -m -p '' bowler \
             texlive-ifoddpage \
             texlive-xpatch \
             texlive-pdfsync \
+            texlive-texcount \
         curl \
         cabextract \
         xorg-x11-font-utils \
