@@ -31,6 +31,7 @@ RUN useradd -m -p '' bowler \
             texlive-caption \
             texlive-hvfloat \
             texlive-footmisc \
+            texlive-fnpct \
             texlive-enumitem \
             texlive-multirow \
             texlive-rotating \
