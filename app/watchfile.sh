@@ -19,5 +19,5 @@ do
     	echo "Word Count: "
     	texcount /usr/fomtextemplate/deine_inhalte/Kapitel.tex -quiet -brief
    	fi
-   	sleep 2
+   	# sleep 2
 done
