@@ -24,6 +24,7 @@ RUN useradd -m -p '' bowler \
             texlive-fancybox \
             texlive-setspace \
             texlive-polyglossia \
+            texlive-anyfontsize \
             texlive-pdfpages \
             texlive-appendix \
             texlive-fontspec \

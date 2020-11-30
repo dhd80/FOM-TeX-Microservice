@@ -1,8 +1,7 @@
 **/.classpath
 **/.dockerignore
 **/.env
-**/.git
-**/.gitignore
+**/.git*
 **/.project
 **/.settings
 **/.toolstarget
@@ -23,6 +22,5 @@
 **/values.dev.yaml
 *.log
 .vscode
-.github
 .DS_Store
 readme.md
