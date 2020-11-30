@@ -28,17 +28,22 @@
 \blinditemize\footcite[Vgl. ][34]{Digitaloekonomie}
 \Blindtext
 
-\begin{tabular}{cccc}
-    Material        & Symbol &  eg  & Type \\
-    \hline
-    diamond         & C      & 5.46 & i \\
-    silicon         & Si     & 1.12 & i \\
-    germanium       & Ge     & 0.67 & i \\
-    selenium        & Se     & 1.74 & d \\
-    \hline
-    \captionsetup{width=.7\textwidth}
-    \capquelle{\cite[][212]{bsp}}\label{tab_bsp}
-\end{tabular}
+\begin{center}
+    \begin{tabular}{cccc}
+        Material        & Symbol &  eg  & Type \\
+        \hline
+        diamond         & C      & 5.46 & i \\
+        silicon         & Si     & 1.12 & i \\
+        germanium       & Ge     & 0.67 & i \\
+        selenium        & Se     & 1.74 & d \\
+        \hline
+        \multicolumn{4}{c}{
+            \captionsetup{width=.6\textwidth}
+            \capquelle{\cite[][212]{bsp}}\label{tab_bsp}
+        }
+    \end{tabular}
+
+\end{center}
 
 \section{Schluss}
 \subsection{Fazit}
