@@ -34,13 +34,13 @@ RUN useradd -m -p '' bowler \
             texlive-fnpct \
             texlive-enumitem \
             texlive-multirow \
-            texlive-rotating \
             texlive-colortbl \
             texlive-hyperref \
             texlive-blindtext \
             texlive-listings \
             texlive-nomencl \
             texlive-topiclongtable \
+            texlive-threeparttable \
             texlive-mdwtools \
             texlive-units \
             texlive-newtx \
