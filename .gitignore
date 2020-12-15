@@ -1,5 +1,15 @@
 .DS_Store
 .vscode
-*.log
 *.pdfsync
-
+*.log
+*.lof
+*.aux
+*.bbl
+*.toc
+*.nls
+*.nlo
+*.ilg
+*.bcf
+*.blg
+*.out
+*.xml
