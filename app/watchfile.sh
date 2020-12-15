@@ -14,7 +14,7 @@ do
    	if [[ "$ATIME" != "$LTIME" ]]
    	then
       	texcount /usr/fomtextemplate/deine_inhalte/Kapitel.tex > word_count.log
-    	arara thesis.tex
+    	arara *.tex
     	LTIME=$ATIME
     	echo "Word Count: "
     	texcount /usr/fomtextemplate/deine_inhalte/Kapitel.tex -quiet -brief
