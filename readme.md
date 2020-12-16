@@ -11,7 +11,7 @@ Template mit **Microservice** Charakter. **Automatisch** da während des schreib
 Dieser dockerized LaTeX Template Microservice, soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Ein Kompilierungslauf dauert ~20 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
 
 ## Leitfaden
-Gestaltungsleitfaden 2018
+Gestaltungsleitfaden 2020
 
 ## Installation 
 installiere [Docker for Mac](https://docs.docker.com/docker-for-mac/install) Das Template wurde bisher nur macOS getestet, andere OS sollten aber auch funktionieren.
