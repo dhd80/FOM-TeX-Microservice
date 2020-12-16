@@ -8,13 +8,7 @@ Dieses TeX Template ist eine sehr stark angepasst Version von Andy Grunwald's wu
 Template mit **Microservice** Charakter. **Automatisch** da während des Schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden (~1.2GB).
 
 ## How it works
-Dieser dockerized LaTeX Template Microservice, soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Ein Kompilierungslauf dauert ~20 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen.
-
-## Leitfaden
-Gestaltungsleitfaden 2020
-
-## Installation 
-Installiere [Docker](https://docs.docker.com/get-docker/) für dein Betriebssystem.
+Dieser dockerized LaTeX Template Microservice, soll einen Docker (am besten im Hintergrund) starten und jedesmal wenn die Datei _**deine_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Ein Kompilierungslauf dauert ~30 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen. Gestaltungsleitfaden 2020.
 
 ## Verwendung
 ### Vorbereitung
@@ -26,12 +20,14 @@ Installiere [Docker](https://docs.docker.com/get-docker/) für dein Betriebssyst
     ``cd FOM-TeX-Microservice``
 
 ### Mit Docker
+Installiere [Docker](https://docs.docker.com/get-docker/) für dein Betriebssystem.
+
 #### Via Docker-Compose (Empfohlen)
-benutze einfach
+Gib den folgenden Befehl in dein Terminal ein:
     
     docker-compose up
 
-~ fertig! 🤓 Oder starte wahlweise mit oder ohne Terminal (inkl. min. Fehlerhandling)
+~ fertig! 🤓 Oder starte wahlweise mit oder ohne Ausgabe im Terminal (inkl. mini Fehlerhandling)
 - Ohne, also im Hintergrund:
     
     ``docker-compose up --detach --build --remove-orphans``
