@@ -51,10 +51,10 @@ benutze einfach
 
     ``docker run -d --name fomtextemplate -v {$PWD}:/usr/fomtextemplate:rw fomtextemplate:latest``
 
-Je nachdem welche Shell du nutzt, musst du ``{$PWD}`` in ``${PWD}`` ändern. Es wird eine _thesis.pdf_ neben der _thesis.tex_ erzeugt.
+Je nachdem welche Shell du nutzt, musst du ``{$PWD}`` in ``${PWD}`` ändern. Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ### Ohne Docker
-hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara thesis.tex`` Es wird eine _thesis.pdf_ neben der _thesis.tex_ erzeugt.
+hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ## Mein Workflow (Empfehlungen)
 ### Software
@@ -74,7 +74,7 @@ du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe 
 bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
 
 ## Fehlerhandling
-_arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv thesis.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
+_arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv elaborat.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
 
 ## Getestet unter
 macOS.
