@@ -68,27 +68,16 @@
 	\par\parbox{\captionwidth}{\raggedright\bigskip Quelle: #1}%
 }
 \usepackage{hvfloat}
+
 %====================================
-% Literaturverzeichnis Art
+% Literaturverzeichnis Art - Zitierstil
 %====================================
-%%%% Neuer Leitfaden (2018)
-\usepackage[
-	backend=biber,
-	style=ext-authoryear,
-	maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
-	maxbibnames=999,
-	mergedate=false,
-	date=iso,
-	seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
-	urldate=iso,
-	innamebeforetitle,
-	dashed=false,
-	autocite=footnote,
-	doi=false,
-	useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
-	mincrossrefs=1
-]{biblatex}%iso dateformat für YYYY-MM-DD
-\input{app/skripte/modsBiblatex2018}
+%%%%%%%%%%%%%%%% Style IEEE
+\usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
+
+%%%%%%%%%%%%%%%% Style FOM-ext-authoryear
+%\usepackage[backend=biber,style=ext-authoryear,maxcitenames=3,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/skripte/modsBiblatex2018}
+
 %====================================
 % Fußnoten Pakete
 %====================================

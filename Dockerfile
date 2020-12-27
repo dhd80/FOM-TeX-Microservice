@@ -1,6 +1,6 @@
 FROM registry.fedoraproject.org/fedora-minimal:latest
 
-LABEL Name=fomtextemplate Version=0.0.3
+LABEL Name=fomtextemplate
 
 USER root
 
@@ -16,6 +16,7 @@ RUN useradd -m -p '' bowler \
             texlive-scheme-basic \
             texlive-arara \
             texlive-biblatex-ext \
+            texlive-biblatex-ieee \
             texlive-babel \
             texlive-babel-german \
             texlive-geometry \

@@ -1,0 +1,21 @@
+% Unerwünschte Felder aus dem Literaturverzeichnis ausschliessen
+% https://ctan.kako-dev.de/macros/latex/contrib/biblatex/doc/biblatex.pdf
+\DeclareSourcemap{
+  \maps[datatype=bibtex, overwrite]{
+    \map{
+      \pertype{book}
+      \pertype{inbook}
+      \pertype{article}
+      \pertype{collection}
+      \pertype{incollection}
+      \pertype{inproceedings}
+        %\step[fieldset=doi, null]
+        %\step[fieldset=isbn, null]
+        \step[fieldset=issn, null]
+        \step[fieldset=url, null]
+        \step[fieldset=eprint, null]
+        \step[fieldset=note, null]
+        \step[fieldset=language, null]
+    }
+  }
+}
