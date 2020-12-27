@@ -53,7 +53,7 @@ Je nachdem welche Shell du nutzt, musst du ``{$PWD}`` in ``${PWD}`` ändern. Es 
 Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ### Zitierstile
-Es kann können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Dafür muss in der Datei _elaborat.tex_ unter der Überschrift _Literaturverzeichnis Art - Zitierstil_ die jeweilige Zeile aus- bzw. kommentiert werden.
+Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Dafür muss in der Datei _elaborat.tex_ unter der Überschrift _Literaturverzeichnis Art - Zitierstil_ die jeweilige Zeile aus- bzw. kommentiert werden.
 
 ## Mein Workflow (Empfehlungen)
 ### Software
