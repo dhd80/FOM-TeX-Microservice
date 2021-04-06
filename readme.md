@@ -24,7 +24,7 @@ Dieser dockerized LaTeX Template Microservice, soll einen Docker (am besten im H
 #### Via Docker-Compose (Empfohlen)
 Gib den folgenden Befehl in dein Terminal ein:
     
-    docker-compose up
+    docker-compose up -d
 
 ~ fertig! 🤓 Oder starte wahlweise mit oder ohne Ausgabe im Terminal (inkl. mini Fehlerhandling)
 - Ohne, also im Hintergrund:
