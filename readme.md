@@ -12,15 +12,14 @@ Dieser dockerized LaTeX Template Microservice, soll einen Docker (am besten im H
 
 ## Verwendung
 ### Vorbereitung
-1. klone dieses Repository in deinem Terminal, mit dem Befehl
+1. installiere [Docker](https://docs.docker.com/get-docker/) für dein Betriebssystem.
+2. klone dieses Repository in deinem Terminal, mit dem Befehl
 
     ``git clone https://github.com/dhd80/FOM-TeX-Microservice.git``
 
-2. gehe in den Ordner dieses Repository mit 
-    ``cd FOM-TeX-Microservice``
+3. gehe in den Ordner dieses Repository mit 
 
-### Mit Docker
-Installiere [Docker](https://docs.docker.com/get-docker/) für dein Betriebssystem.
+    ``cd FOM-TeX-Microservice``
 
 #### Via Docker-Compose (Empfohlen)
 Gib den folgenden Befehl in dein Terminal ein:

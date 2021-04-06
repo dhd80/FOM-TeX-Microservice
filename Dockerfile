@@ -2,11 +2,13 @@ FROM registry.fedoraproject.org/fedora-minimal:latest
 
 LABEL Name=fomtextemplate
 
-USER root
+ENV DCKR_NAME fomtextemplate
+ENV APPL_DIR  /usr/$DCKR_NAME
+ENV USER_NAME bowler
 
 # User # Dir # Update # Tools # LaTeX - essentials # LaTeX - bibliography # LaTeX - packages # Font
-RUN useradd -m -p '' bowler \
-    && mkdir -p /usr/fomtextemplate/ \
+RUN useradd -m -p '' $USER_NAME \
+    && mkdir -p $APPL_DIR \
     && microdnf -y update \
     && microdnf -y install \
         vim-minimal \
@@ -19,6 +21,7 @@ RUN useradd -m -p '' bowler \
             texlive-biblatex-ieee \
             texlive-babel \
             texlive-babel-german \
+            texlive-nomencl \
             texlive-geometry \
             texlive-float \
             texlive-fancyhdr \
@@ -40,7 +43,6 @@ RUN useradd -m -p '' bowler \
             texlive-hyperref \
             texlive-blindtext \
             texlive-listings \
-            texlive-nomencl \
             texlive-topiclongtable \
             texlive-threeparttable \
             texlive-mdwtools \
@@ -58,9 +60,9 @@ RUN useradd -m -p '' bowler \
         && rpm -i 'https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm' \
     && microdnf clean all
 
-USER bowler
+USER $USER_NAME
 
-WORKDIR /usr/fomtextemplate/
+WORKDIR $APPL_DIR
 
-CMD chmod +x /usr/fomtextemplate/app/watchfile.sh \
-    && /usr/fomtextemplate/app/watchfile.sh
+CMD chmod +x $APPL_DIR/app/watchfile.sh \
+    && $APPL_DIR/app/watchfile.sh
