@@ -69,12 +69,20 @@ Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, 
 Um einen Link inklusive Bezeichnung auf ein Kapitel/Abschnitt oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und eine Referenz _ref_ als Quelle.
 
 Beispiel Abbildung:
-1. ``\label{abb_auth}``
-2. ``(vgl. Abbildung \ref{abb_auth})``
+1. ``(vgl. Abbildung \ref{abb_auth})``
+2. ``\label{abb_auth}``
 
 Beispiel Kapitel/Abschnitt:
-1. ``\ref{sec_challenge}``
+1. ``(vgl. \ref{sec_challenge})``
 2. ``\label{sec_challenge}``
+
+Beispiel Abbildungen einbinden:
+``\begin{figure}[!htb]
+    \caption{Terminal}
+    \includegraphics[width=1\textwidth]{.github/terminal}
+    \captionsetup{width=1\textwidth}
+    \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
+\end{figure}`
 
 #### Flüchtige Quellen
 Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe 
