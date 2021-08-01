@@ -66,7 +66,7 @@ Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/
 Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
 
 ### Abbildungen und Kapitelreferenzen
-Um einen Link inklusive Bezeichnung auf ein Kapitel oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und  und eine Referenz _ref_ als Ziel.
+Um einen Link inklusive Bezeichnung auf ein Kapitel/Abschnitt oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und eine Referenz _ref_ als Quelle.
 
 Beispiel Abbildung:
 1. ``\label{abb_auth}``
