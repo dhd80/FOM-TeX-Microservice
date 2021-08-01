@@ -82,7 +82,7 @@ Beispiel Abbildungen einbinden:
     \includegraphics[width=1\textwidth]{.github/terminal}
     \captionsetup{width=1\textwidth}
     \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
-\end{figure}`
+\end{figure}``
 
 #### Flüchtige Quellen
 Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe 
