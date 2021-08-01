@@ -63,10 +63,22 @@ Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/
 [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
 
 ### Bibliographie
-Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
+Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
+
+### Abbildungen und Kapitelreferenzen
+Um einen Link inklusive Bezeichnung auf ein Kapitel oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und  und eine Referenz _ref_ als Ziel.
+
+Beispiel Abbildung:
+1. ``\label{abb_auth}``
+2. ``(vgl. Abbildung \ref{abb_auth})``
+
+Beispiel Kapitel/Abschnitt:
+1. ``\ref{sec_challenge}``
+2. ``\label{sec_challenge}``
 
 #### Flüchtige Quellen
-Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe https://www.linuxjournal.com/content/downloading-entire-web-site-wget
+Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden, siehe 
+[hier](https://www.linuxjournal.com/content/downloading-entire-web-site-wget)
 
 #### Wörter zählen
 Bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
