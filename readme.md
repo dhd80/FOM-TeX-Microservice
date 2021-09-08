@@ -98,8 +98,8 @@ fertig! 🤓 🤓 🤓
 
 Weitere Startbefehle:   
 
-    docker-compose up --detach --build --remove-orphans
-    docker-compose up --build --remove-orphans
+        docker-compose up --detach --build --remove-orphans
+        docker-compose up --build --remove-orphans
 
 ![Terminal](.github/terminal.png)
 
