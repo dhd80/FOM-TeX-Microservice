@@ -24,8 +24,8 @@
 %====================================
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{polyglossia}
-\setdefaultlanguage[spelling=new]{german}
+%\usepackage{polyglossia}
+%\setdefaultlanguage[spelling=new]{german}
 \usepackage[german=quotes,autostyle]{csquotes}
 %====================================
 % Divers
@@ -75,8 +75,8 @@
 %%%%%%%%%%%%%%%% Style IEEE
 %\usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
 
-%%%%%%%%%%%%%%%% Style FOM-ext-authoryear
-\usepackage[backend=biber,style=ext-authoryear,maxcitenames=3,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/skripte/modsBiblatex2018}
+%%%%%%%%%%%%%%%% Style FOM-ext-authoryear %%%%%%%%%%%%%%%% et al. maxcitenames
+\usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/skripte/modsBiblatex2018}
 
 %====================================
 % Fußnoten Pakete
@@ -166,6 +166,8 @@
 %====================================
 % Abkürzungsverzeichnis
 %====================================
+\usepackage[printonlyused]{acronym}
+
 \usepackage[intoc]{nomencl}
 \renewcommand{\nomname}{Abkürzungsverzeichnis}
 \setlength{\nomlabelwidth}{.50\textwidth}

@@ -117,7 +117,34 @@
     {}% 
   \setunit*{\addspace}% 
   \usebibmacro{urldate}
-  } 
+  }
+
+% https://tex.stackexchange.com/a/430758/53779
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]%
+  {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{%
+     \DeclareFieldFormat{bibhyperref}{####1}%
+     \usebibmacro{cite}%
+     \ifentrytype{commentary}
+       {\thinspace\thinspace\textbf{\addslash}\thinspace
+        \textit{\usebibmacro{prenote}}}
+       {}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+%
+\DeclareCiteCommand{\cite}%[\mkbibcite]%
+  {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{%
+     \DeclareFieldFormat{bibhyperref}{####1}%
+     \usebibmacro{cite}%
+     \ifentrytype{commentary}
+       {\thinspace\thinspace\textbf{\addslash}\thinspace
+        \textit{\usebibmacro{prenote}}}
+       {}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 %Verhindern, dass bei mehreren Quellen des gleichen Autors im gleichen Jahr 
 %Buchstaben nach der Jahreszahl angezeigt werden wenn sich das Keyword in shorttitle unterscheidet.

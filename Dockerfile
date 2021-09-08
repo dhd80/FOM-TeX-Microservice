@@ -17,6 +17,7 @@ RUN useradd -m -p '' $USER_NAME \
             biber \
             texlive-scheme-basic \
             texlive-arara \
+            texlive-acronym \
             texlive-biblatex-ext \
             texlive-biblatex-ieee \
             texlive-babel \

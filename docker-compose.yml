@@ -1,8 +1,7 @@
 version: '3.8'
 
 services:
-  texsvc:
-    container_name: fomtextemplate
+  fomtextemplatesvc:
     image: fomtextemplate
     build:
       context: .
