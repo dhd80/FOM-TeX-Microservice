@@ -4,7 +4,7 @@
 - [Mein Workflow (Empfehlungen)](#mein-workflow--empfehlungen-)
   * [Software](#software)
   * [Bibliographie](#bibliographie)
-    + [Bücher](#b-cher)
+  * [Bücher](#b-cher)
   * [Artikel](#artikel)
   * [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
   * [Flüchtige Quellen](#fl-chtige-quellen)
@@ -38,7 +38,7 @@ Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**de
 [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
 
 ### Bibliographie
-#### Bücher
+### Bücher
 Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
 
 ### Artikel
