@@ -37,7 +37,11 @@ Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**de
 [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
 
 ### Bibliographie
+#### Bücher
 Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
+
+#### Artikel
+Bei Springer können für jeden Artikel, unter _Cite this article_, Einträge für deine Biblatex _citations_manual_ geladen werden. Diese _RIS-Dateien_ müssen vorher mit einem [ris2bib Konverter](https://www.bruot.org/ris2bib/) in das Biblatex-Format gebracht werden bevor du sie eintragen kannst.
 
 ### Abbildungen und Kapitelreferenzen
 Um einen Link inklusive Bezeichnung auf ein Kapitel/Abschnitt oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und eine Referenz _ref_ als Quelle.
@@ -61,7 +65,7 @@ Beispiel Abbildungen einbinden:
         \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
     \end{figure}
 
-#### Flüchtige Quellen
+### Flüchtige Quellen
 Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden:
 
         $ wget \
@@ -76,8 +80,11 @@ Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden:
                  www.website.org/tutorials/html/
 Quelle: [linuxjournal.com](https://www.linuxjournal.com/content/downloading-entire-web-site-wget)
 
-#### Wörter zählen
+### Wörter zählen
 Bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
+
+### Zitierstile
+Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Dafür muss in der Datei _elaborat.tex_ unter der Überschrift _Literaturverzeichnis Art - Zitierstil_ die jeweilige Zeile aus- bzw. kommentiert werden.
 
 ## Verwendung
 ### Vorbereitung
@@ -109,9 +116,6 @@ Weitere Startbefehle:
 
 ### Ohne Docker
 Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
-
-### Zitierstile
-Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Dafür muss in der Datei _elaborat.tex_ unter der Überschrift _Literaturverzeichnis Art - Zitierstil_ die jeweilige Zeile aus- bzw. kommentiert werden.
 
 ## Fehlerhandling
 _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv elaborat.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
