@@ -1,10 +1,12 @@
 # FOM TeX Template Microservice
+- [Features](#features)
+- [How it works](#how-it-works)
 - [Mein Workflow (Empfehlungen)](#mein-workflow--empfehlungen-)
   * [Software](#software)
   * [Bibliographie](#bibliographie)
     + [Bücher](#b-cher)
     + [Artikel](#artikel)
-    + [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
+  * [Tex Beispiele: Abbildungen und Kapitelreferenzen](#tex-beispiele--abbildungen-und-kapitelreferenzen)
   * [Flüchtige Quellen](#fl-chtige-quellen)
   * [Wörter zählen](#w-rter-z-hlen)
   * [Zitierstile](#zitierstile)
@@ -42,7 +44,7 @@ Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, 
 #### Artikel
 Bei Springer können für jeden Artikel, unter _Cite this article_, Einträge für deine Biblatex _citations_manual_ geladen werden. Diese _RIS-Dateien_ müssen vorher mit einem [ris2bib Konverter](https://www.bruot.org/ris2bib/) in das Biblatex-Format gebracht werden bevor du sie eintragen kannst.
 
-#### Abbildungen und Kapitelreferenzen
+### Tex Beispiele: Abbildungen und Kapitelreferenzen
 Um einen Link inklusive Bezeichnung auf ein Kapitel/Abschnitt oder eine Abbildung zu setzen, benutzt du ein _label_ als Ziel und eine Referenz _ref_ als Quelle.
 
 Beispiel Abbildung:
