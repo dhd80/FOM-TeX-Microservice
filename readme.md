@@ -1,24 +1,25 @@
 # FOM TeX Template Microservice
-- [FOM TeX Template Microservice](#fom-tex-template-microservice)
-  * [Features](#features)
-  * [How it works](#how-it-works)
-  * [Mein Workflow (Empfehlungen)](#mein-workflow--empfehlungen-)
-    + [Software](#software)
-    + [Bibliographie](#bibliographie)
-    + [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
-      - [Flüchtige Quellen](#fl-chtige-quellen)
-      - [Wörter zählen](#w-rter-z-hlen)
-  * [Verwendung](#verwendung)
-    + [Vorbereitung](#vorbereitung)
-    + [Starte via Docker-Compose (Empfohlen)](#starte-via-docker-compose--empfohlen-)
-    + [Starte via Dockerfile](#starte-via-dockerfile)
-    + [Ohne Docker](#ohne-docker)
-    + [Zitierstile](#zitierstile)
-  * [Fehlerhandling](#fehlerhandling)
-  * [Getestet unter](#getestet-unter)
-  * [To do](#to-do)
-  * [Disclaimer](#disclaimer)
-  * [Lizenz](#lizenz)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Mein Workflow (Empfehlungen)](#mein-workflow--empfehlungen-)
+  * [Software](#software)
+  * [Bibliographie](#bibliographie)
+    + [Bücher](#b-cher)
+  * [Artikel](#artikel)
+  * [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
+  * [Flüchtige Quellen](#fl-chtige-quellen)
+  * [Wörter zählen](#w-rter-z-hlen)
+  * [Zitierstile](#zitierstile)
+- [Verwendung](#verwendung)
+  * [Vorbereitung](#vorbereitung)
+  * [Starte via Docker-Compose (Empfohlen)](#starte-via-docker-compose--empfohlen-)
+  * [Starte via Dockerfile](#starte-via-dockerfile)
+  * [Ohne Docker](#ohne-docker)
+- [Fehlerhandling](#fehlerhandling)
+- [Getestet unter](#getestet-unter)
+- [To do](#to-do)
+- [Disclaimer](#disclaimer)
+- [Lizenz](#lizenz)
 
 Eine LaTeX-Vorlage für den persönlichen Gebrauch für Scientific Essays, Haus-, Seminar-, Bachelor- und Master-Arbeiten an der FOM Hochschule für Oekonomie & Management. Dieses TeX Template ist eine sehr stark angepasst Version von Andy Grunwald's wunderbarem [FOM-LaTeX-Template](https://github.com/andygrunwald/FOM-LaTeX-Template). Anpassungen basieren auf den Rückmeldungen der Dozenten.
 
@@ -40,7 +41,7 @@ Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**de
 #### Bücher
 Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt.
 
-#### Artikel
+### Artikel
 Bei Springer können für jeden Artikel, unter _Cite this article_, Einträge für deine Biblatex _citations_manual_ geladen werden. Diese _RIS-Dateien_ müssen vorher mit einem [ris2bib Konverter](https://www.bruot.org/ris2bib/) in das Biblatex-Format gebracht werden bevor du sie eintragen kannst.
 
 ### Abbildungen und Kapitelreferenzen
