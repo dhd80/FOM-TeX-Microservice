@@ -6,54 +6,61 @@ ENV DCKR_NAME fomtextemplate
 ENV APPL_DIR  /usr/$DCKR_NAME
 ENV USER_NAME bowler
 
-# User # Dir # Update # Tools # LaTeX - essentials # LaTeX - bibliography # LaTeX - packages # Font
 RUN useradd -m -p '' $USER_NAME \
     && mkdir -p $APPL_DIR \
     && microdnf -y update \
     && microdnf -y install \
+        # os tools
         vim-minimal \
         inotify-tools \
         java-11-openjdk.x86_64 \
-            biber \
+            # tex essentials and tools
             texlive-scheme-basic \
             texlive-arara \
-            texlive-acronym \
+            texlive-xpatch \
+            texlive-mdwtools \
+            texlive-ifoddpage \
+            texlive-hyperref \
+            texlive-texcount \
+            texlive-blindtext \
+            # bibliography
+            biber \
             texlive-biblatex-ext \
             texlive-biblatex-ieee \
+            # text language
             texlive-babel \
             texlive-babel-german \
+            texlive-hyphen-german \
+            # toc, appendix etc
             texlive-nomencl \
+            texlive-appendix \
+            texlive-pdfpages \
+            # page appearance
             texlive-geometry \
-            texlive-float \
+            texlive-colortbl \
+            texlive-titlesec \
             texlive-fancyhdr \
             texlive-fancybox \
             texlive-setspace \
-            texlive-polyglossia \
-            texlive-anyfontsize \
-            texlive-pdfpages \
-            texlive-appendix \
-            texlive-fontspec \
             texlive-ragged2e \
+            # content apperance
+            texlive-acronym \
             texlive-caption \
+            texlive-enumitem \
+            texlive-float \
             texlive-hvfloat \
+            texlive-listings \
+            texlive-multirow \
+            texlive-threeparttable \
+            texlive-topiclongtable \
+            # footnote
             texlive-footmisc \
             texlive-fnpct \
-            texlive-enumitem \
-            texlive-multirow \
-            texlive-colortbl \
-            texlive-hyperref \
-            texlive-blindtext \
-            texlive-listings \
-            texlive-topiclongtable \
-            texlive-threeparttable \
-            texlive-mdwtools \
             texlive-units \
+            # font
+            texlive-anyfontsize \
+            texlive-fontspec \
             texlive-newtx \
-            texlive-titlesec \
-            texlive-ifoddpage \
-            texlive-xpatch \
-            texlive-pdfsync \
-            texlive-texcount \
         curl \
         cabextract \
         xorg-x11-font-utils \
