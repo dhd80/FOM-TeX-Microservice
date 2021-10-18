@@ -1,0 +1,36 @@
+name: build and test
+on: push
+jobs:
+  docker:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: docker compose up -d
+
+      - name: Arrange test
+        run: rm elaborat.pdf
+
+      - name: Act test
+        run: touch ./deine_inhalte/Kapitel.tex
+
+      - name: Sleep
+        run: docker ps -a && sleep 120s && ls
+        shell: bash
+
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "elaborat.pdf, word_count.log"
+
+      - name: Assert test
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: echo "PDF file doesn't exist" && exit 1
+
+      - name: Stop containers
+        if: always()
+        run: docker compose down

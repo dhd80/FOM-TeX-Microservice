@@ -4,10 +4,8 @@ LABEL Name=fomtextemplate
 
 ENV DCKR_NAME fomtextemplate
 ENV APPL_DIR  /usr/$DCKR_NAME
-ENV USER_NAME bowler
 
-RUN useradd -m -p '' $USER_NAME \
-    && mkdir -p $APPL_DIR \
+RUN mkdir -p $APPL_DIR \
     && microdnf -y update \
     && microdnf -y install \
         # os tools
@@ -31,7 +29,7 @@ RUN useradd -m -p '' $USER_NAME \
             texlive-babel \
             texlive-babel-german \
             texlive-hyphen-german \
-            # toc, appendix etc
+            # toc appendix etc
             texlive-nomencl \
             texlive-appendix \
             texlive-pdfpages \
@@ -43,7 +41,7 @@ RUN useradd -m -p '' $USER_NAME \
             texlive-fancybox \
             texlive-setspace \
             texlive-ragged2e \
-            # content apperance
+            # content appearance
             texlive-acronym \
             texlive-caption \
             texlive-enumitem \
@@ -68,9 +66,6 @@ RUN useradd -m -p '' $USER_NAME \
         && rpm -i 'https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm' \
     && microdnf clean all
 
-USER $USER_NAME
-
 WORKDIR $APPL_DIR
 
-CMD chmod +x $APPL_DIR/app/watchfile.sh \
-    && $APPL_DIR/app/watchfile.sh
+CMD chmod +x $APPL_DIR/app/watchfile.sh && $APPL_DIR/app/watchfile.sh
