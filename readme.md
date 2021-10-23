@@ -9,10 +9,12 @@
       - [Artikel](#artikel)
     + [TeX Beispiele](#tex-beispiele)
       - [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
-      - [Weitere TeX Beispiele und Aussehen](#weitere-tex-beispiele-und-aussehen)
+      - [Weitere TeX Beispiele](#weitere-tex-beispiele)
     + [Flüchtige Quellen](#fl-chtige-quellen)
     + [Wörter zählen](#w-rter-z-hlen)
+  * [Erscheinungsbild des Templates](#erscheinungsbild-des-templates)
     + [Zitierstile](#zitierstile)
+    + [Titelseite](#titelseite)
     + [Ehrenwörtliche Erklärung und Unterschrift](#ehrenw-rtliche-erkl-rung-und-unterschrift)
   * [Installation und Start des Dockers](#installation-und-start-des-dockers)
     + [Vorbereitung](#vorbereitung)
@@ -72,7 +74,7 @@ Beispiel Abbildungen einbinden:
         \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
     \end{figure}
 
-#### Weitere TeX Beispiele und Aussehen
+#### Weitere TeX Beispiele
 In [deine_inhalte/Kapitel.tex](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/deine_inhalte/Kapitel.tex) ist der von mir meistgenutzte LaTeX-Code eingetragen, Grafiken, Tabellen, Kursivschrift etc. so kannst du in diesem [Git-Repository](https://github.com/dhd80/FOM-TeX-Microservice) immer wieder nachschlagen. Im Kompilat [elaborat.pdf](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/elaborat.pdf) sind die gebräuchlichsten LaTeX-Beispiele hinterlegt, so kannst du prüfen, wie deine Hausarbeit aussehen sollte.
 
 ### Flüchtige Quellen
@@ -93,6 +95,7 @@ Quelle: [linuxjournal.com](https://www.linuxjournal.com/content/downloading-enti
 ### Wörter zählen
 Bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welcher du die Anzahl deiner geschriebenen Worte ablesen kannst.
 
+## Erscheinungsbild des Templates
 ### Zitierstile
 Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Letzteres ist per Default aktiviert. Um _IEEE_ zu aktivieren muss in der Datei _elaborat.tex_ (Zeile 51), die folgende Zeile:
 
@@ -101,6 +104,9 @@ Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/
 durch folgende Zeile ersetzt werden:
 
     \usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
+
+### Titelseite
+Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseiten angepasst werden.
 
 ### Ehrenwörtliche Erklärung und Unterschrift
 
@@ -136,10 +142,10 @@ Weitere Startbefehle (Optional), inkl. min. Fehlerhandling:
     docker run -d --name fomtextemplate -v ${PWD}:/usr/fomtextemplate:rw fomtextemplate:latest
 
 ### Starte ohne Docker
-Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet. Auch eine Systeminstallation von _Times New Roman_. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
+Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet, sowie eine Systeminstallation von _Times New Roman_. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ### Aufräumen
-Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben (Achtung dies tangiert auch andere Docker!): ``docker system prune -a``
+Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben [Achtung dies tangiert auch andere Docker!]: ``docker system prune -a``
 
 ## Fehlerhandling
 _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv elaborat.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.

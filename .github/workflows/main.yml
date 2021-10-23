@@ -18,7 +18,7 @@ jobs:
         run: touch ./deine_inhalte/Kapitel.tex
 
       - name: Sleep
-        run: docker ps -a && sleep 120s && ls
+        run: sleep 120s
         shell: bash
 
       - name: Check file existence
@@ -29,7 +29,7 @@ jobs:
 
       - name: Assert test
         if: steps.check_files.outputs.files_exists == 'false'
-        run: echo "PDF file doesn't exist" && exit 1
+        run: echo "Files doesn't exist" && exit 1
 
       - name: Stop containers
         if: always()
