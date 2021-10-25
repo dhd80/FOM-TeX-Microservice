@@ -41,6 +41,7 @@ RUN mkdir -p $APPL_DIR \
             texlive-fancybox \
             texlive-setspace \
             texlive-ragged2e \
+            texlive-scrlayer-scrpage \
             # content appearance
             texlive-acronym \
             texlive-caption \

@@ -106,7 +106,7 @@ durch folgende Zeile ersetzt werden:
     \usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
 
 ### Titelseite
-Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseiten angepasst werden.
+Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseite angepasst werden.
 
 ### Ehrenwörtliche Erklärung und Unterschrift
 
@@ -145,7 +145,7 @@ Weitere Startbefehle (Optional), inkl. min. Fehlerhandling:
 Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet, sowie eine Systeminstallation von _Times New Roman_. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ### Aufräumen
-Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben [Achtung dies tangiert auch andere Docker!]: ``docker system prune -a``
+Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben [Achtung: dies tangiert auch andere Docker!]: ``docker system prune -a``
 
 ## Fehlerhandling
 _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv elaborat.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
