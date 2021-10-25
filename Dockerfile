@@ -15,12 +15,11 @@ RUN mkdir -p $APPL_DIR \
             # tex essentials and tools
             texlive-scheme-basic \
             texlive-arara \
-            texlive-xpatch \
             texlive-mdwtools \
             texlive-ifoddpage \
-            texlive-hyperref \
             texlive-texcount \
             texlive-blindtext \
+            texlive-hyperref \
             # bibliography
             biber \
             texlive-biblatex-ext \
@@ -29,21 +28,18 @@ RUN mkdir -p $APPL_DIR \
             texlive-babel \
             texlive-babel-german \
             texlive-hyphen-german \
-            # toc appendix etc
+            # toc appendix
             texlive-nomencl \
             texlive-appendix \
             texlive-pdfpages \
+            texlive-acronym \
             # page appearance
             texlive-geometry \
-            texlive-colortbl \
             texlive-titlesec \
-            texlive-fancyhdr \
-            texlive-fancybox \
             texlive-setspace \
             texlive-ragged2e \
             texlive-scrlayer-scrpage \
             # content appearance
-            texlive-acronym \
             texlive-caption \
             texlive-enumitem \
             texlive-float \
@@ -55,6 +51,7 @@ RUN mkdir -p $APPL_DIR \
             # footnote
             texlive-footmisc \
             texlive-fnpct \
+            texlive-xpatch \
             texlive-units \
             # font
             texlive-anyfontsize \
