@@ -38,7 +38,6 @@ RUN mkdir -p $APPL_DIR \
             texlive-titlesec \
             texlive-setspace \
             texlive-ragged2e \
-            texlive-scrlayer-scrpage \
             # content appearance
             texlive-caption \
             texlive-enumitem \
