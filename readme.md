@@ -23,7 +23,6 @@
     + [Starte ohne Docker](#starte-ohne-docker)
     + [Aufräumen](#aufr-umen)
   * [Fehlerhandling](#fehlerhandling)
-  * [To do](#to-do)
   * [Disclaimer](#disclaimer)
   * [Lizenz](#lizenz)
 
