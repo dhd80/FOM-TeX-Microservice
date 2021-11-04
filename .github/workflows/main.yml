@@ -27,9 +27,13 @@ jobs:
         with:
           files: "elaborat.pdf, word_count.log"
 
+      - name: Log in case of failure
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: cat elaborat.log
+
       - name: Assert test
         if: steps.check_files.outputs.files_exists == 'false'
-        run: echo "Files doesn't exist" && exit 1
+        run: echo "Files doesn't exist\n\ncat elaborat.log" && exit 1
 
       - name: Stop containers
         if: always()

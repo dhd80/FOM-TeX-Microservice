@@ -56,6 +56,9 @@ RUN mkdir -p $APPL_DIR \
             texlive-anyfontsize \
             texlive-fontspec \
             texlive-newtx \
+            # bugfix
+            texlive-everysel \
+            texlive-everyshi \
         curl \
         cabextract \
         xorg-x11-font-utils \
