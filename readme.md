@@ -23,7 +23,6 @@
     + [Starte ohne Docker](#starte-ohne-docker)
     + [Aufräumen](#aufr-umen)
   * [Fehlerhandling](#fehlerhandling)
-  * [To do](#to-do)
   * [Disclaimer](#disclaimer)
   * [Lizenz](#lizenz)
 
@@ -35,7 +34,7 @@ Eine LaTeX-Vorlage für den persönlichen Gebrauch für Scientific Essays, Haus-
 Template mit **Microservice** Charakter. **Automatisch** da während des Schreibens, die PDF kompiliert wird. Echte Einbindung von **Times New Roman** als Systemschrift, denn die meisten TeX-Templates nutzen nur eine ähnliche Schriftart und nicht das Original. **Keine Systeminstallation** von LaTeX notwendig, da LaTeX automatisch im Docker installiert wird. **Platzsparend** da nur die notwendigen TeX-Pakete installiert werden (~1.2GB). **Prozessorientiert**. Getestet unter **Linux** und **macOS**. Gestaltungsleitfaden **2021**.
 
 ## How it works
-Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**deine\_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Ein Kompilierungslauf dauert ~50 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen und via arara Support-Befehle ausgeführt werden.
+Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**deine\_inhalte/Kapitel.tex**_ gespeichert wird, wird diese  _**automatisch**_ mit [_arara_](https://github.com/cereda/arara) kompiliert. Ein Kompilierungslauf dauert ~20 Sekunden, da LaTeX und BibLaTeX einen mehrmaligen Durchlauf benötigen und via arara Support-Befehle ausgeführt werden.
 
 ![VsCode](.github/vscode.png)
 
@@ -106,7 +105,7 @@ durch folgende Zeile ersetzt werden:
     \usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
 
 ### Titelseite
-Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseiten angepasst werden.
+Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseite angepasst werden.
 
 ### Ehrenwörtliche Erklärung und Unterschrift
 
@@ -145,15 +144,10 @@ Weitere Startbefehle (Optional), inkl. min. Fehlerhandling:
 Hierbei wird natürlich eine LaTeX Installation und alle benötigten Pakete auf deinem System erwartet, sowie eine Systeminstallation von _Times New Roman_. Du kannst das Template kompilieren, wenn du in deinem Terminal folgenden Befehl nutzt: ``arara elaborat.tex`` Es wird eine _elaborat.pdf_ neben der _elaborat.tex_ erzeugt.
 
 ### Aufräumen
-Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben [Achtung dies tangiert auch andere Docker!]: ``docker system prune -a``
+Nach geschriebener Hausarbeit, kann das System gesäubert werden indem du den Docker stoppst mit ``docker compose down`` und folgenden Befehl ausführst um Speicher freizugeben [Achtung: dies tangiert auch andere Docker!]: ``docker system prune -a``
 
 ## Fehlerhandling
 _arara_ säubert diverse auxiliary files vor und nach dem Kompilierungslauf, was diversen Fehlern vorbeugt. Sollte ein Fehler auftreten, kompiliere mit ``arara -lv elaborat.tex`` direkt im Docker, was eine weitere Logdatei erzeugt, aber auch mehr Output auf deinem Terminal, u.a. in Form von Fehlermeldungen.
-
-## To do
-- fancy* Pakete loswerden
-- überflüssige Pakete identifizieren
-- Zitate aufräumen
 
 ## Disclaimer
 Solltest du dieses Template nutzen wollen, plane genug Zeit ein und teste es vorher aus. Bespreche mit deinem Betreuer das Format, da mehrere Zitierstile im Umlauf sind und manche Betreuer speziellere Vorgaben machen. Gerne Antworte ich auf Anfragen, hier in GitHub. Ich kann jedoch keine Aussage über die Reaktionszeit treffen. Dies ist ein privates Projekt und die Nutzung auf eigene Gefahr. Diese Vorlage hat weder einen Anspruch auf Richtigkeit, noch auf Vollständigkeit. Verbesserungen sind jederzeit willkommen.

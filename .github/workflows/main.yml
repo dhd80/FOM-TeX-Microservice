@@ -18,7 +18,7 @@ jobs:
         run: touch ./deine_inhalte/Kapitel.tex
 
       - name: Sleep
-        run: sleep 120s
+        run: sleep 30s
         shell: bash
 
       - name: Check file existence
