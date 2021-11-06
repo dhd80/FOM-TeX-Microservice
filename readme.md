@@ -9,6 +9,7 @@
       - [Artikel](#artikel)
     + [TeX Beispiele](#tex-beispiele)
       - [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
+      - [Tabellen](#tabellen)
       - [Weitere TeX Beispiele](#weitere-tex-beispiele)
     + [Flüchtige Quellen](#fl-chtige-quellen)
     + [Wörter zählen](#w-rter-z-hlen)
@@ -72,6 +73,27 @@ Beispiel Abbildungen einbinden:
         \captionsetup{width=1\textwidth}
         \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
     \end{figure}
+
+#### Tabellen
+Textbaustein einer Beispieltabelle:
+
+    \begin{table}[!htb]\label{tabelle_eins}
+        \setlength{\arrayrulewidth}{1pt}
+        \begin{threeparttable}
+            \caption{Tabelle Eins}
+            \begin{tabularx}{\textwidth}[htb!]{|X|X|X|X|X|}
+                \hline
+                Spalte 1 & Spalte 2 & Spalte 3 & Spalte 4 & Spalte 5\\ \hline
+                1 & 2 & 3 & 4 & 5 \\ \hline
+                1 & 2 & 3 & 4 & 5 \\ \hline 
+                1 & 2 & 3 & 4 & 5 \\ \hline 
+                1 & 2 & 3 & 4 & 5 \\ \hline 
+            \end{tabularx}
+            \begin{tablenotes}[flushleft]
+                \item \normalsize{Quelle: \cite[][207]{bsp}}
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{table}
 
 #### Weitere TeX Beispiele
 In [deine_inhalte/Kapitel.tex](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/deine_inhalte/Kapitel.tex) ist der von mir meistgenutzte LaTeX-Code eingetragen, Grafiken, Tabellen, Kursivschrift etc. so kannst du in diesem [Git-Repository](https://github.com/dhd80/FOM-TeX-Microservice) immer wieder nachschlagen. Im Kompilat [elaborat.pdf](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/elaborat.pdf) sind die gebräuchlichsten LaTeX-Beispiele hinterlegt, so kannst du prüfen, wie deine Hausarbeit aussehen sollte.

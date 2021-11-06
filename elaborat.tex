@@ -71,9 +71,10 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{ragged2e}
-\usepackage{multirow}
+\usepackage{tabularx}
 \usepackage{longtable}
-\usepackage{threeparttable}\usepackage{enumitem}
+\usepackage{threeparttable}
+\usepackage{enumitem}
 	\renewcommand{\labelitemi}{$\bullet$}
 	\renewcommand{\labelitemii}{$\bullet$}
 	\renewcommand{\labelitemiii}{$\bullet$}
@@ -108,33 +109,53 @@
 	\addbibresource{deine_inhalte/citations_manual.bib} 
 	\graphicspath{{deine_inhalte/Abbildungen/}{deine_inhalte/Titelseite/}{deine_inhalte/Kapitelanhang/}}
 		\input{app/skripte/weitereEbene}
+
+	% Abkürzungsverzeichnis
 	\renewcommand{\nomname}{Abkürzungsverzeichnis}
 	\setlength{\nomlabelwidth}{.50\textwidth}
 	\renewcommand{\nomlabel}[1]{#1 \dotfill}
 	\setlength{\nomitemsep}{-\parsep}
 	\makenomenclature
 		\input{deine_inhalte/Metainformationen}
-	\begin{document}
+
+\begin{document}
+
+	% Abbildungsverzeichnis
 	\renewcommand{\figurename}{Abbildung}
+
+	% Literaturverzeichnis
 	\renewcommand{\refname}{Literaturverzeichnis}
 	\newcolumntype{C}{>{\arraybackslash}X}
 		\input{deine_inhalte/Titelseite/Titelseite}
 	\newpage
 	\restoregeometry
 	\setcounter{page}{2}
+
+	% Inhaltsverzeichnis
 	\tableofcontents
 	\newpage
+
 	\printnomenclature
 	\newpage
+
+	% Abbildungsverzeichnis
 	\listoffigures
 	\newpage
+
+	% Tabellenverzeichnis
+	\listoftables
+	\newpage
+
 	\pagenumbering{arabic}
 	\chead[\pagemark]{\pagemark}
 	\setcounter{page}{1}
 		\input{deine_inhalte/Kapitel}
 	\newpage
+
+	% Literaturverzeichnis
 	\printbibliography[nottype=online,heading=bibintoc,title={Literaturverzeichnis}]
 	\printbibliography[type=online,title={Internetquellen}]
 	\newpage
 		\input{deine_inhalte/Kapitelanhang/Erklaerung}
-	\end{document}
+
+\end{document}
