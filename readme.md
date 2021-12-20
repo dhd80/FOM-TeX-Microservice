@@ -52,50 +52,7 @@ Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, 
 #### Artikel
 Bei Springer können für jeden Artikel, unter _Cite this article_, Einträge für deine Biblatex _citations_manual.bib_ geladen werden. Diese _RIS-Dateien_ müssen vorher mit einem [ris2bib Konverter](https://www.bruot.org/ris2bib/) in das Biblatex-Format gebracht werden bevor du sie eintragen kannst.
 
-### TeX Beispiele
-#### Abbildungen und Kapitelreferenzen
-Um einen Link inklusive Bezeichnung auf ein Kapitel-Abschnitt oder eine Abbildung zu setzen, benutzt du ein _label_ als Anker und eine Referenz _ref_ als Sprungmarke.
-
-Beispiel Abbildung:
-    (vgl. Abbildung \ref{abb_auth})
-    \label{abb_auth}
-
-Beispiel Kapitel/Abschnitt:
-
-    (vgl. \ref{sec_challenge})
-    \label{sec_challenge}
-
-Beispiel Abbildungen einbinden:
-
-    \begin{figure}[!htb]
-        \caption{Terminal}
-        \includegraphics[width=1\textwidth]{.github/terminal}
-        \captionsetup{width=1\textwidth}
-        \capquelle{\cite[][200]{bsp}}\label{abb_bsp}
-    \end{figure}
-
-#### Tabellen
-Textbaustein einer Beispieltabelle:
-
-    \begin{table}[!htb]\label{tabelle_eins}
-        \setlength{\arrayrulewidth}{1pt}
-        \begin{threeparttable}
-            \caption{Tabelle Eins}
-            \begin{tabularx}{\textwidth}[htb!]{|X|X|X|X|X|}
-                \hline
-                Spalte 1 & Spalte 2 & Spalte 3 & Spalte 4 & Spalte 5\\ \hline
-                1 & 2 & 3 & 4 & 5 \\ \hline
-                1 & 2 & 3 & 4 & 5 \\ \hline 
-                1 & 2 & 3 & 4 & 5 \\ \hline 
-                1 & 2 & 3 & 4 & 5 \\ \hline 
-            \end{tabularx}
-            \begin{tablenotes}[flushleft]
-                \item \normalsize{Quelle: \cite[][207]{bsp}}
-            \end{tablenotes}
-        \end{threeparttable}
-    \end{table}
-
-#### Weitere TeX Beispiele
+#### TeX- und andere Beispiele
 In [deine_inhalte/Kapitel.tex](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/deine_inhalte/Kapitel.tex) ist der von mir meistgenutzte LaTeX-Code eingetragen, Grafiken, Tabellen, Kursivschrift etc. so kannst du in diesem [Git-Repository](https://github.com/dhd80/FOM-TeX-Microservice) immer wieder nachschlagen. Im Kompilat [elaborat.pdf](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/elaborat.pdf) sind die gebräuchlichsten LaTeX-Beispiele hinterlegt, so kannst du prüfen, wie deine Hausarbeit aussehen sollte.
 
 ### Flüchtige Quellen
@@ -120,11 +77,11 @@ Bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welch
 ### Zitierstile
 Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Letzteres ist per Default aktiviert. Um _IEEE_ zu aktivieren muss in der Datei _elaborat.tex_ (Zeile 51), die folgende Zeile:
 
-    \usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/skripte/modsBiblatex2018}
+    \usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/src/bib/modsBiblatex2018}
 
 durch folgende Zeile ersetzt werden:
 
-    \usepackage[backend=biber,style=ieee]{biblatex}\input{app/skripte/modsBiblatexIEEE}
+    \usepackage[backend=biber,style=ieee]{biblatex}\input{app/src/bib/modsBiblatexIEEE}
 
 ### Titelseite
 Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseite angepasst werden.

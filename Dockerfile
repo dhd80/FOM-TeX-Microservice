@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-minimal:latest
+FROM registry.fedoraproject.org/fedora-minimal:34
 
 LABEL Name=fomtextemplate
 
@@ -45,8 +45,12 @@ RUN mkdir -p $APPL_DIR \
             texlive-hvfloat \
             texlive-listings \
             texlive-multirow \
+            # texlive-nicematrix \
             texlive-threeparttable \
             texlive-topiclongtable \
+            # draw content
+            texlive-pgf \
+            texlive-smartdiagram \
             # footnote
             texlive-footmisc \
             texlive-fnpct \
@@ -56,9 +60,6 @@ RUN mkdir -p $APPL_DIR \
             texlive-anyfontsize \
             texlive-fontspec \
             texlive-newtx \
-            # bugfix
-            texlive-everysel \
-            texlive-everyshi \
         curl \
         cabextract \
         xorg-x11-font-utils \

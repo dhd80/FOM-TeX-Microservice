@@ -1,12 +1,13 @@
 % !TEX TS-program = arara
-% arara: clean: {files: [ elaborat.aux, elaborat.bbl, elaborat.toc]}
+% arara: clean: {files: [ elaborat.aux, elaborat.bbl, elaborat.toc, elaborat.lol]}
 % arara: xelatex
+% arara: nomencl
 % arara: nomencl
 % arara: biber
 % arara: biber
 % arara: xelatex
 % arara: xelatex
-% arara: clean: {files: [elaborat.aux, elaborat.bbl, elaborat.toc, elaborat.nls, elaborat.nlo, elaborat.ilg, elaborat.bcf, elaborat.blg, elaborat.out, elaborat.run.xml, elaborat.lof]}
+% arara: clean: {files: [elaborat.aux, elaborat.bbl, elaborat.toc, elaborat.nls, elaborat.nlo, elaborat.ilg, elaborat.bcf, elaborat.blg, elaborat.out, elaborat.run.xml, elaborat.lof, elaborat.lol,  elaborat.lot]}
 %
 %
 %
@@ -16,6 +17,8 @@
 \usepackage[automark,plainheadsepline,singlespacing=true]{scrlayer-scrpage}
 	\pagestyle{scrheadings}\clearpairofpagestyles
 	\chead{\Roman{page}}\setkomafont{pageheadfoot}{\normalfont}\pagenumbering{Roman}
+\usepackage{tikz}
+\usepackage{smartdiagram}
 \usepackage{blindtext}
 \usepackage{mdwlist}
 \usepackage{hvfloat}
@@ -27,6 +30,12 @@
 		singlelinecheck=off
 	}
 	\captionsetup[table]{%
+		labelfont={bf,rm},
+		textfont={bf,rm},
+		justification=raggedright,
+		singlelinecheck=off
+	}
+	\captionsetup[lstlisting]{%
 		labelfont={bf,rm},
 		textfont={bf,rm},
 		justification=raggedright,
@@ -58,7 +67,7 @@
 	\setkomafont{sectioning}{\bfseries}
 
 % bibliography
-\usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/skripte/modsBiblatex2018}
+\usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/src/bib/modsBiblatex2018}
 
 % footnote
 \usepackage{fnpct}
@@ -71,8 +80,8 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{ragged2e}
+% \usepackage{nicematrix}
 \usepackage{tabularx}
-\usepackage{longtable}
 \usepackage{threeparttable}
 \usepackage{enumitem}
 	\renewcommand{\labelitemi}{$\bullet$}
@@ -83,22 +92,98 @@
 	\definecolor{dunkelgrau}{rgb}{0.8,0.8,0.8}
 	\definecolor{hellgrau}{rgb}{0.0,0.7,0.99}
 	\definecolor{mauve}{rgb}{0.58,0,0.82}       
-	\definecolor{dkgreen}{rgb}{0,0.6,0}         
-\usepackage{listings}
+	\definecolor{dkgreen}{rgb}{0,0.6,0}
+	\definecolor{groovyblue}{HTML}{0000A0}
+	\definecolor{groovygreen}{HTML}{008080}
+	\definecolor{darkgray}{rgb}{.4,.4,.4}
+	\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+	\definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
+	\definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
+
+	\newcommand{\cmd}[1]{\textcolor{groovygreen}{\texttt{#1}}}
+
+	\usepackage{listings}
 	\lstset{
-		basicstyle=\small\ttfamily,             
-		numberstyle=\small,
+		basicstyle=\small\ttfamily\color{charcoal},             
+		commentstyle=\small\ttfamily\color{cinnamon},      
+		keywordstyle=\small\ttfamily\color{groovyblue},              
+		stringstyle=\small\ttfamily\color{mauve},
+		numberstyle=\tiny,
 		numbers=left,
-		numbersep=8pt,                          
+		numbersep=8pt,            
+		tabsize=1,
 		stepnumber=1,
-		breaklines=true,
 		showstringspaces=false,
-		frame=l,
-		framexleftmargin=1pt,
-		framexrightmargin=5pt,
-		keywordstyle=\color{blue},              
-		commentstyle=\color{dkgreen},           
-		stringstyle=\color{mauve}               
+		breaklines=true,
+		breakatwhitespace=false,
+		frame=none,
+		framexleftmargin=0pt,
+		framexrightmargin=0pt              
+	}
+
+	\lstdefinelanguage{Groovy}[]{Java}{
+		keywordstyle=\color{groovyblue}\ttfamily,
+		stringstyle=\color{groovygreen}\ttfamily,
+		keywords=[3]{each, findAll, groupBy, collect, inject, eachWithIndex, cleanWs},
+		morekeywords={def, as, in, use},
+		moredelim=[is][\textcolor{charcoal}]{\%\%}{\%\%},
+		moredelim=[il][\textcolor{charcoal}]{§§}
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% http://tex.stackexchange.com/questions/152829/how-can-i-highlight-yaml-code-in-a-pretty-way-with-listings
+
+	\newcommand\YAMLcolonstyle{\small\ttfamily\color{mauve}}
+	\newcommand\YAMLkeystyle{\small\ttfamily\color{charcoal}}
+	\newcommand\YAMLvaluestyle{\small\ttfamily\color{groovygreen}}
+
+	\makeatletter
+
+	\newcommand\language@yaml{Yaml}
+
+	\expandafter\expandafter\expandafter\lstdefinelanguage
+	\expandafter{\language@yaml}
+	{
+		keywords={true,false,null,y,n},
+		keywordstyle=\color{darkgray},
+		basicstyle=\YAMLkeystyle,
+		sensitive=false,
+		comment=[l]{\#},
+		morecomment=[s]{/*}{*/},
+		commentstyle=\color{purple}\ttfamily,
+		stringstyle=\YAMLvaluestyle\ttfamily,
+		moredelim=[l][\color{orange}]{\&},
+		moredelim=[l][\color{magenta}]{*},
+		moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},
+		morestring=[b]',
+		morestring=[b]",
+		literate =    {---}{{\ProcessThreeDashes}}3
+						{>}{{\textcolor{red}\textgreater}}1     
+						{|}{{\textcolor{red}\textbar}}1 
+						{\ -\ }{{\mdseries\ -\ }}3,
+	}
+
+	% switch to key style at EOL
+	\lst@AddToHook{EveryLine}{\ifx\lst@language\language@yaml\YAMLkeystyle\fi}
+	\makeatother
+
+	\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\usetikzlibrary{%
+		decorations.pathreplacing,%
+		decorations.pathmorphing,%
+		intersections,%
+		backgrounds,%
+		shapes.misc,% wg. rounded rectangle
+		arrows,%
+		shapes,
+		chains,%
+		matrix,%
+		positioning,% wg. " of "
+		scopes,%
+		shadows,%
+		trees,%
+		calc
 	}
 
 	% document
@@ -107,43 +192,38 @@
 	\setlength{\parskip}{0.3em plus 0.5em minus 0.6em}
 	\addbibresource{deine_inhalte/citations.bib} 
 	\addbibresource{deine_inhalte/citations_manual.bib} 
-	\graphicspath{{deine_inhalte/Abbildungen/}{deine_inhalte/Titelseite/}{deine_inhalte/Kapitelanhang/}}
-		\input{app/skripte/weitereEbene}
-
-	% Abkürzungsverzeichnis
+	\graphicspath{{deine_inhalte/Abbildungen/}{app/src/Titelseite/}{deine_inhalte/Kapitelanhang/}}
+	\input{app/src/toc/weitereEbene}
 	\renewcommand{\nomname}{Abkürzungsverzeichnis}
 	\setlength{\nomlabelwidth}{.50\textwidth}
 	\renewcommand{\nomlabel}[1]{#1 \dotfill}
 	\setlength{\nomitemsep}{-\parsep}
 	\makenomenclature
-		\input{deine_inhalte/Metainformationen}
-
-\begin{document}
-
-	% Abbildungsverzeichnis
+	\input{deine_inhalte/Metainformationen}
+	\begin{document}
+	\renewcommand{\lstlistingname}{Quelltext}
+	\renewcommand{\lstlistlistingname}{\lstlistingname e}
 	\renewcommand{\figurename}{Abbildung}
-
-	% Literaturverzeichnis
 	\renewcommand{\refname}{Literaturverzeichnis}
 	\newcolumntype{C}{>{\arraybackslash}X}
-		\input{deine_inhalte/Titelseite/Titelseite}
+	\input{app/src/Titelseite/Titelseite}
 	\newpage
 	\restoregeometry
 	\setcounter{page}{2}
 
-	% Inhaltsverzeichnis
 	\tableofcontents
 	\newpage
 
 	\printnomenclature
 	\newpage
 
-	% Abbildungsverzeichnis
 	\listoffigures
 	\newpage
-
-	% Tabellenverzeichnis
-	\listoftables
+	
+	\lstlistoflistings
+	\newpage
+	
+	\input{deine_inhalte/Kapitelanhang/Sperrvermerk}
 	\newpage
 
 	\pagenumbering{arabic}
@@ -151,11 +231,8 @@
 	\setcounter{page}{1}
 		\input{deine_inhalte/Kapitel}
 	\newpage
-
-	% Literaturverzeichnis
 	\printbibliography[nottype=online,heading=bibintoc,title={Literaturverzeichnis}]
 	\printbibliography[type=online,title={Internetquellen}]
 	\newpage
 		\input{deine_inhalte/Kapitelanhang/Erklaerung}
-
-\end{document}
+	\end{document}
