@@ -3,9 +3,6 @@ kind: Template
 metadata:
   name: redis-template
   annotations:
-    description: "Description"
-    iconClass: "icon-redis"
-    tags: "database,nosql"
 		[...]
 parameters:
 	- description: Password used for Redis authentication

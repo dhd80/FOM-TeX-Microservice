@@ -59,10 +59,12 @@
   \clearfield{note}%
   \clearlist{language}%
 }{}
+\ifentrytype{online}{
+  \clearfield{note}%
+}{}
 }
 
-\renewcommand*{\finentrypunct}{}%Kein Punkt am ende des Literaturverzeichnisses
-
+\renewcommand*{\finentrypunct}{}% Kein Punkt am ende des Literaturverzeichnisses
 \renewcommand*{\newunitpunct}{\addcomma\space} 
 \DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\space} 
 \DeclareDelimFormat{titleyeardelim}{\newunitpunct} 
@@ -106,7 +108,7 @@
   [{Zugriff}\addcolon\addspace
   #1\printfield{userb}]
 }
-\DeclareFieldFormat[online]{url}{\mkbibacro{URL}\addcolon\space <\url{#1}>}
+\DeclareFieldFormat[online]{url}{\addcolon\space <\url{#1}>}
 \renewbibmacro*{url+urldate}{% 
   \usebibmacro{url}% 
   \ifentrytype{online} 

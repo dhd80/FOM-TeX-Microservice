@@ -4,13 +4,11 @@
   * [How it works](#how-it-works)
   * [Verwendung von LaTeX und des Templates](#verwendung-von-latex-und-des-templates)
     + [Software](#software)
-    + [Bibliographie](#bibliographie)
+    + [Bibliographie und Zitate](#bibliographie-und-zitate)
       - [Bücher](#b-cher)
       - [Artikel](#artikel)
-    + [TeX Beispiele](#tex-beispiele)
-      - [Abbildungen und Kapitelreferenzen](#abbildungen-und-kapitelreferenzen)
-      - [Tabellen](#tabellen)
-      - [Weitere TeX Beispiele](#weitere-tex-beispiele)
+      - [TeX- und andere Beispiele](#tex--und-andere-beispiele)
+      - [Internetseiten zitieren](#internetseiten-zitieren)
     + [Flüchtige Quellen](#fl-chtige-quellen)
     + [Wörter zählen](#w-rter-z-hlen)
   * [Erscheinungsbild des Templates](#erscheinungsbild-des-templates)
@@ -26,6 +24,7 @@
   * [Fehlerhandling](#fehlerhandling)
   * [Disclaimer](#disclaimer)
   * [Lizenz](#lizenz)
+
 
 [![build and test](https://github.com/dhd80/FOM-TeX-Microservice/actions/workflows/main.yml/badge.svg)](https://github.com/dhd80/FOM-TeX-Microservice/actions/workflows/main.yml)
 
@@ -45,7 +44,7 @@ Dieser Microservice, soll einen Docker starten und jedesmal wenn die Datei _**de
 [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) - 
 [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
 
-### Bibliographie
+### Bibliographie und Zitate
 #### Bücher
 Unter [zbib.org](https://zbib.org) kannst du die ISBNs deiner Bücher eingeben, die Einträge werden in einem Cookie gespeichert. Dann den Cite-Style auf Chicago stellen und eine BibLaTeX Datei downloaden, mit dem Namen _citations.bib_. Diese .bib kannst du einfach unter _deine_inhalte/_ immer wieder überschreiben und nutzen. Im selben Verzeichnis liegt _citations_manual.bib_ diese kannst du nutzen um eigene Einträge zu setzen, bspw. wenn die auto. generierten unsauber aufbereitet sind. Es werden also beide .bib gleichzeitig von der Vorlage genutzt. Es sollten in keiner _bib Datei_ doppelte Keywords gesetzt werden.
 
@@ -54,6 +53,9 @@ Bei Springer können für jeden Artikel, unter _Cite this article_, Einträge f�
 
 #### TeX- und andere Beispiele
 In [deine_inhalte/Kapitel.tex](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/deine_inhalte/Kapitel.tex) ist der von mir meistgenutzte LaTeX-Code eingetragen, Grafiken, Tabellen, Kursivschrift etc. so kannst du in diesem [Git-Repository](https://github.com/dhd80/FOM-TeX-Microservice) immer wieder nachschlagen. Im Kompilat [elaborat.pdf](https://github.com/dhd80/FOM-TeX-Microservice/blob/master/elaborat.pdf) sind die gebräuchlichsten LaTeX-Beispiele hinterlegt, so kannst du prüfen, wie deine Hausarbeit aussehen sollte.
+
+#### Internetseiten zitieren
+Mit der Chrome-Erweiterung [Cite This For Me: Web Citer](https://chrome.google.com/webstore/detail/cite-this-for-me-web-cite/nnnmhgkokpalnmbeighfomegjfkklkle?hl=de) können Informationen, welche normalerweise auf der Internetseite zusammengesucht werden müssen, bequem in die Zwischenablage kopiert werden. Vor der Benutzung _Chicago_ einstellen.
 
 ### Flüchtige Quellen
 Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden:
@@ -67,7 +69,7 @@ Du kannst flüchtige Quellen mit wget von deinem Terminal aus downloaden:
          --restrict-file-names=windows \
          --domains website.org \
          --no-parent \
-             www.website.org/tutorials/html/
+             'www.website.org/tutorials/html/'
 Quelle: [linuxjournal.com](https://www.linuxjournal.com/content/downloading-entire-web-site-wget)
 
 ### Wörter zählen
@@ -77,7 +79,7 @@ Bei jedem Lauf wird die Datei _word_count.log_ erstellt/überschrieben, in welch
 ### Zitierstile
 Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/biblatex-contrib/biblatex-ieee/biblatex-ieee.pdf) und _FOM-ext-authoryear_ geladen werden. Letzteres ist per Default aktiviert. Um _IEEE_ zu aktivieren muss in der Datei _elaborat.tex_ (Zeile 51), die folgende Zeile:
 
-    \usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/src/bib/modsBiblatex2018}
+    \usepackage[backend=biber,style=ext-authoryear,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/src/bib/modsBiblatex}
 
 durch folgende Zeile ersetzt werden:
 
