@@ -1,10 +1,9 @@
 version: '3.8'
 
 services:
-  fomtextemplatesvc:
-    image: fomtextemplate
+  fomtextemplsvc:
+    image: fomtextempl
     build:
       context: .
-      dockerfile: ./Dockerfile
     volumes:
-      - .:/usr/fomtextemplate:rw
+      - .:/usr/fomtextempl:rw
