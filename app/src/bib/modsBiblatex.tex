@@ -1,90 +1,89 @@
 \usepackage{xpatch} 
 
-%%% Weitere Optionen 
-%\boolitem[false]{citexref} %Wenn incollection, inbook, inproceedings genutzt wird nicht den zugehörigen parent auch in Literaturverzeichnis aufnehmen
-
 %Aufräumen die Felder werden laut Leitfaden nicht benötigt.
 \AtEveryBibitem{%
-\ifentrytype{book}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{inbook}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{collection}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{incollection}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{article}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{inproceedings}{
-  \clearfield{issn}%
-  \clearfield{doi}%
-  \clearfield{isbn}%
-  \clearfield{url}%
-  \clearfield{eprint}%
-  \clearfield{note}%
-  \clearlist{language}%
-}{}
-\ifentrytype{online}{
-  \clearfield{note}%
-}{}
+  \ifentrytype{book}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{inbook}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{collection}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{incollection}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{article}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{inproceedings}{
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{isbn}%
+    \clearfield{url}%
+    \clearfield{eprint}%
+    \clearfield{note}%
+    \clearlist{language}%
+  }{}
+  \ifentrytype{online}{
+    \clearfield{note}%
+    \clearfield{day}%
+    \clearfield{month}%
+  }{}
 }
 
-\renewcommand*{\finentrypunct}{}% Kein Punkt am ende des Literaturverzeichnisses
-\renewcommand*{\newunitpunct}{\addcomma\space} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Literaturverzeichnis Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kein Punkt am ende des Literaturverzeichnisses
+\renewcommand*{\finentrypunct}{}
+\renewcommand*{\newunitpunct}{\addcomma\space}
 \DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\space} 
-\DeclareDelimFormat{titleyeardelim}{\newunitpunct} 
-%Namen kursiv schreiben
+\DeclareDelimFormat{titleyeardelim}{\newunitpunct}
+% Artikel: Trennung zwischen journalname und Volume
+\renewcommand*{\jourvoldelim}{\addcomma\addspace}
+% Namen kursiv schreiben
 \renewcommand*{\mkbibnamefamily}{\mkbibemph} 
 \renewcommand*{\mkbibnamegiven}{\mkbibemph} 
 \renewcommand*{\mkbibnamesuffix}{\mkbibemph} 
-\renewcommand*{\mkbibnameprefix}{\mkbibemph} 
-%\renewcommand*{\multinamedelim}{\addcomma\space}
-% Die Trennung mehrerer Autorennamen erfolgt durch Kommata.
-% siehe Beispiele im Leitfaden S. 16
-% Die folgende Zeile würde mit Semikolon trennen
-%\DeclareDelimFormat{multinamedelim}{\addsemicolon\addspace}
+\renewcommand*{\mkbibnameprefix}{\mkbibemph}
 
 %Delimiter für mehrere und letzten Namen gleich setzen
 \DeclareDelimAlias{finalnamedelim}{multinamedelim} 
 
 \DeclareNameAlias{default}{family-given} 
-\DeclareNameAlias{sortname}{default}  %Nach Namen sortieren
-
+\DeclareNameAlias{sortname}{default}
 
 \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
 \DeclareDelimFormat{editortypedelim}{\addspace} 
@@ -97,59 +96,29 @@
 \DeclareFieldFormat*{booktitle}{#1} 
 \DeclareFieldFormat*{journaltitle}{#1} 
 
-\xpatchbibdriver{online} 
-  {\usebibmacro{organization+address+date}\newunit\newblock} 
-  {} 
-  {}{} 
+% Abstand bei unterschiedlichen Anfangsbuchstaben 1.5 Zeilen
+\setlength{\bibinitsep}{.75cm}
 
-\DeclareFieldFormat[online]{date}{\mkbibparens{#1}} 
-\DeclareFieldFormat{userb}{\addspace #1\addspace {Uhr}}
-\DeclareFieldFormat{urldate}{%urltime zu urldate hinzufügen
-  [{Zugriff}\addcolon\addspace
-  #1\printfield{userb}]
+\DeclareSourcemap{ 
+  \maps[datatype=bibtex]{ 
+    \map{ 
+      \step[notfield=translator, final] 
+      \step[notfield=editor, final] 
+      \step[fieldset=author, fieldvalue={{{{o\noexpand\adddot\addspace V\noexpand\adddot}}}}]
+    }
+    \map{ 
+      \pernottype{online} 
+      \step[fieldset=address, fieldvalue={{o\noexpand\adddot\addspace O\noexpand\adddot}}]
+      \step[fieldset=postnote, fieldvalue={{o\noexpand\adddot\addspace S\noexpand\adddot}}]
+    }
+  } 
 }
-\DeclareFieldFormat[online]{url}{\addcolon\space <\url{#1}>}
-\renewbibmacro*{url+urldate}{% 
-  \usebibmacro{url}% 
-  \ifentrytype{online} 
-    {\setunit*{\addspace}% 
-     \iffieldundef{year}
-       {\printtext[date]{{keine Datumsangabe}}}
-       {\usebibmacro{date}}}% 
-    {}% 
-  \setunit*{\addspace}% 
-  \usebibmacro{urldate}
-  }
 
-% https://tex.stackexchange.com/a/430758/53779
-\DeclareCiteCommand{\footcite}[\mkbibfootnote]%
-  {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
-  {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{%
-     \DeclareFieldFormat{bibhyperref}{####1}%
-     \usebibmacro{cite}%
-     \ifentrytype{commentary}
-       {\thinspace\thinspace\textbf{\addslash}\thinspace
-        \textit{\usebibmacro{prenote}}}
-       {}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-%
-\DeclareCiteCommand{\cite}%[\mkbibcite]%
-  {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
-  {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{%
-     \DeclareFieldFormat{bibhyperref}{####1}%
-     \usebibmacro{cite}%
-     \ifentrytype{commentary}
-       {\thinspace\thinspace\textbf{\addslash}\thinspace
-        \textit{\usebibmacro{prenote}}}
-       {}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-%Verhindern, dass bei mehreren Quellen des gleichen Autors im gleichen Jahr 
-%Buchstaben nach der Jahreszahl angezeigt werden wenn sich das Keyword in shorttitle unterscheidet.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subroutines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verhindern, dass bei mehreren Quellen des gleichen Autors im gleichen Jahr 
+% Buchstaben nach der Jahreszahl angezeigt werden wenn sich das Keyword in shorttitle unterscheidet.
 \DeclareExtradate{
   \scope{
     \field{labelyear}
@@ -158,7 +127,12 @@
     \scope{
       \field{shorttitle}
     }
-}       
+}
+
+\DefineBibliographyStrings{german}{ 
+  nodate    = {{}o.\adddot\addspace J\adddot}, 
+  andothers = {et\addabbrvspace al\adddot} 
+}
 
 %% Anzeige des Jahres nach dem Stichwort (shorttitle) im Literaturverzeichnis
 %% Wenn das Jahr bei Online-Quellen nicht explizit angegeben wurde, wird nach
@@ -181,35 +155,36 @@
 %% das Stichwort hat der Aufrufer hier schon ausgegeben.
 %% siehe auch Kommentar zu: \renewbibmacro*{date+extradate}
 \renewbibmacro*{cite:labeldate+extradate}{% 
-    \ifentrytype{online} 
-       {\setunit*{\addspace\addcomma\addspace}% 
-         \iffieldundef{year}
-           {\bibstring{nodate}} 
-       {\printlabeldateextra}}% 
-       {\printlabeldateextra}}
- 
+  \ifentrytype{online} 
+     {\setunit*{\addspace\addcomma\addspace}% 
+       \iffieldundef{year}
+         {\bibstring{nodate}} 
+     {\printlabeldateextra}}% 
+     {\printlabeldateextra}}
 
-\DefineBibliographyStrings{german}{ 
-  nodate    = {{}o.\adddot\addspace J\adddot}, 
-  andothers = {et\addabbrvspace al\adddot} 
-} 
-\DefineBibliographyStrings{english}{
-  nodate    = {{}n.\adddot\addspace d\adddot},
-  andothers = {et\addabbrvspace al\adddot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Onlinequellen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\xpatchbibdriver{online}{\usebibmacro{organization+address+date}\newunit\newblock}{}{}{} 
+
+\DeclareFieldFormat[online]{date}{\mkbibparens{#1}} 
+\DeclareFieldFormat{userb}{\addspace #1\addspace {Uhr}}
+\DeclareFieldFormat{urldate}{%urltime zu urldate hinzufügen
+  [{Zugriff}\addcolon\addspace
+  #1\printfield{userb}]
 }
-\DeclareSourcemap{ 
-  \maps[datatype=bibtex]{ 
-    \map{ 
-      \step[notfield=translator, final] 
-      \step[notfield=editor, final] 
-      \step[fieldset=author, fieldvalue={{{{o\noexpand\adddot\addspace V\noexpand\adddot}}}}]
-    }
-    \map{ 
-      \pernottype{online} 
-      \step[fieldset=address, fieldvalue={{o\noexpand\adddot\addspace O\noexpand\adddot}}]
-    }
-  } 
-} 
+\DeclareFieldFormat[online]{url}{\addcolon\space <\url{#1}>}
+\renewbibmacro*{url+urldate}{% 
+  \usebibmacro{url}% 
+  \ifentrytype{online} 
+    {\setunit*{\addspace}% 
+     \iffieldundef{year}
+       {\printtext[date]{{keine Datumsangabe}}}
+       {\usebibmacro{date}}}% 
+    {}% 
+  \setunit*{\addspace}% 
+  \usebibmacro{urldate}
+}
 
 \renewbibmacro*{cite}{% 
   \iffieldundef{shorthand} 
@@ -222,9 +197,6 @@
      \setunit{\printdelim{titleyeardelim}}% 
      \usebibmacro{cite:labeldate+extradate}} 
     {\usebibmacro{cite:shorthand}}} 
-
-    \renewcommand*{\jourvoldelim}{\addcomma\addspace}% Trennung zwischen journalname und Volume. Sonst Space; Laut Leitfaden richtig
-    %\hypersetup{hidelinks} %sonst sind Fußnoten grün. Dadurch werden Links allerdings nicht mehr farbig dargestellt
 
 \renewbibmacro*{journal+issuetitle}{%
   \usebibmacro{journal}%
@@ -255,19 +227,10 @@
 % sonst auch bei Webseiten 'o. S.' da, was laut Leitfaden nicht ok ist.
 \renewbibmacro*{postnote}{% 
   \setunit{\postnotedelim}% 
-  \iffieldundef{postnote} 
-    {} %{\printtext{{o.S\adddot}}}
-    {\printfield{postnote}}} 
-    
-% Abstand bei unterschiedlichen Anfangsbuchstaben 1.5 Zeilen
-\setlength{\bibinitsep}{.75cm}
-%\setlength{\bibitemsep}{.75cm}
-
-% nur in den Zitaten/Fussnoten den Vornamen abkürzen (nicht im
-% Literaturverzeichnis)
-
-\DeclareDelimFormat{nonameyeardelim}{\addcomma\space} 
-\DeclareDelimFormat{nameyeardelim}{\addcomma\space} 
+  \iffieldundef{postnote}
+    {\printtext{{o\adddot\addspace{S\adddot}}}}
+  {\printfield{postnote}}
+}
 
 \renewbibmacro*{cite}{%
   \iffieldundef{shorthand}
@@ -281,3 +244,31 @@
       \setunit{\printdelim{titleyeardelim}}% 
      \usebibmacro{cite:labeldate+extradate}}
    {\usebibmacro{cite:shorthand}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fußnoten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/a/430758/53779
+% prnote Vgl. / postnote => S. 22
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]%
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{cite}}
+  }
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+  
+
+\DeclareCiteCommand{\cite}%[\mkbibcite]%
+  {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{\usebibmacro{cite}}
+  }
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% nur in den Fussnoten den Vornamen abkürzen und nicht im Literaturverzeichnis
+\DeclareDelimFormat{nonameyeardelim}{\addcomma\space} 
+\DeclareDelimFormat{nameyeardelim}{\addcomma\space} 
+
