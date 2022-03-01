@@ -130,8 +130,8 @@
 }
 
 \DefineBibliographyStrings{german}{ 
-  nodate    = {{}o.\adddot\addspace J\adddot}, 
-  andothers = {et\addabbrvspace al\adddot} 
+  nodate    = {{}o\adddot\addspace J\adddot},
+  andothers = {et\addabbrvspace al\adddot}
 }
 
 %% Anzeige des Jahres nach dem Stichwort (shorttitle) im Literaturverzeichnis
@@ -145,22 +145,22 @@
     \printfield{shorttitle}% 
     \setunit{\printdelim{titleyeardelim}}%
     \ifentrytype{online} 
-       {\setunit*{\addspace\addcomma\addspace}% 
-         \iffieldundef{year}
-           {\bibstring{nodate}} 
-       {\printlabeldateextra}}% 
-       {\printlabeldateextra}}}
- 
+      {\setunit*{\addspace\addcomma\addspace}% 
+        \iffieldundef{year}
+          {\bibstring{nodate}} 
+      {\printlabeldateextra}}% 
+      {\printlabeldateextra}}}
+
 %% Anzeige des Jahres nach dem Stichwort (shorttitle) in der Fussnote
 %% das Stichwort hat der Aufrufer hier schon ausgegeben.
 %% siehe auch Kommentar zu: \renewbibmacro*{date+extradate}
 \renewbibmacro*{cite:labeldate+extradate}{% 
   \ifentrytype{online} 
-     {\setunit*{\addspace\addcomma\addspace}% 
-       \iffieldundef{year}
-         {\bibstring{nodate}} 
-     {\printlabeldateextra}}% 
-     {\printlabeldateextra}}
+    {\setunit*{\addspace\addcomma\addspace}% 
+      \iffieldundef{year}
+        {\bibstring{nodate}} 
+    {\printlabeldateextra}}% 
+    {\printlabeldateextra}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Onlinequellen
@@ -178,9 +178,9 @@
   \usebibmacro{url}% 
   \ifentrytype{online} 
     {\setunit*{\addspace}% 
-     \iffieldundef{year}
-       {\printtext[date]{{keine Datumsangabe}}}
-       {\usebibmacro{date}}}% 
+    \iffieldundef{year}
+      {\printtext[date]{{keine Datumsangabe}}}
+      {\usebibmacro{date}}}% 
     {}% 
   \setunit*{\addspace}% 
   \usebibmacro{urldate}
@@ -189,13 +189,13 @@
 \renewbibmacro*{cite}{% 
   \iffieldundef{shorthand} 
     {\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}} 
-       {\usebibmacro{cite:label}% 
-        \setunit{\printdelim{nonametitledelim}}} 
-       {\printnames{labelname}% 
-        \setunit{\printdelim{nametitledelim}}}% 
-     \printfield{shorttitle}% 
-     \setunit{\printdelim{titleyeardelim}}% 
-     \usebibmacro{cite:labeldate+extradate}} 
+      {\usebibmacro{cite:label}% 
+      \setunit{\printdelim{nonametitledelim}}} 
+      {\printnames{labelname}% 
+      \setunit{\printdelim{nametitledelim}}}% 
+    \printfield{shorttitle}% 
+    \setunit{\printdelim{titleyeardelim}}% 
+    \usebibmacro{cite:labeldate+extradate}} 
     {\usebibmacro{cite:shorthand}}} 
 
 \renewbibmacro*{journal+issuetitle}{%
@@ -204,8 +204,8 @@
   \iffieldundef{series}
     {}
     {\setunit*{\jourserdelim}%
-     \printfield{series}%
-     \setunit{\servoldelim}}%
+      \printfield{series}%
+      \setunit{\servoldelim}}%
   \iffieldundef{volume}
     {}
     {\printfield{volume}}
@@ -235,15 +235,15 @@
 \renewbibmacro*{cite}{%
   \iffieldundef{shorthand}
     {\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}}
-       {\usebibmacro{cite:label}%
+      {\usebibmacro{cite:label}%
         \setunit{\printdelim{nonameyeardelim}}}
       {\toggletrue{abx@bool@giveninits}
         \printnames[family-given]{labelname}%
         \setunit{\printdelim{nameyeardelim}}}%
       \printfield{shorttitle}%
       \setunit{\printdelim{titleyeardelim}}% 
-     \usebibmacro{cite:labeldate+extradate}}
-   {\usebibmacro{cite:shorthand}}}
+      \usebibmacro{cite:labeldate+extradate}}
+    {\usebibmacro{cite:shorthand}}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,7 +263,7 @@
 \DeclareCiteCommand{\cite}%[\mkbibcite]%
   {\ifentrytype{commentary}{}{\usebibmacro{prenote}}}
   {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{\usebibmacro{cite}}
+    \printtext[bibhyperref]{\usebibmacro{cite}}
   }
   {\multicitedelim}
   {\usebibmacro{postnote}}
