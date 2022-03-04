@@ -83,7 +83,7 @@ Es können die Zitierstil-Pakete [_IEEE_](https://ctan.net/macros/latex/contrib/
 
 durch folgende Zeile ersetzt werden:
 
-    \usepackage[backend=biber,style=ieee]{biblatex}\input{app/src/bib/modsBiblatexIEEE}
+    \usepackage[backend=biber,style=ieee,maxcitenames=1,maxbibnames=999,mergedate=false,date=iso,seconds=true,urldate=iso,innamebeforetitle,dashed=false,autocite=footnote,doi=false,useprefix=true,mincrossrefs=1]{biblatex}\input{app/src/bib/modsBiblatex}
 
 ### Titelseite
 Unter **deine_inhalte/Kapitelanhang/Metainformationen.tex** können die Informationen der Titelseite angepasst werden.

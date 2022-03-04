@@ -9,9 +9,8 @@ RUN mkdir -p $APPL_DIR \
     && microdnf -y update \
     && microdnf -y install \
         # os tools
-        vim-minimal \
         inotify-tools \
-        java-11-openjdk.x86_64 \
+        java-1.8.0-openjdk-headless \
             # tex essentials and tools
             texlive-scheme-basic \
             texlive-arara \
@@ -20,10 +19,11 @@ RUN mkdir -p $APPL_DIR \
             texlive-texcount \
             texlive-blindtext \
             texlive-hyperref \
-            # bibliography
+            # bibliography and abbreviation
             biber \
             texlive-biblatex-ext \
             texlive-biblatex-ieee \
+            texlive-acronym \
             # text language
             texlive-babel \
             texlive-babel-german \
@@ -32,7 +32,6 @@ RUN mkdir -p $APPL_DIR \
             texlive-nomencl \
             texlive-appendix \
             texlive-pdfpages \
-            texlive-acronym \
             # page appearance
             texlive-geometry \
             texlive-titlesec \
